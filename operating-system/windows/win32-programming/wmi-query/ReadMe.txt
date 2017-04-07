@@ -1,0 +1,1 @@
+query sysytem information through COM API
