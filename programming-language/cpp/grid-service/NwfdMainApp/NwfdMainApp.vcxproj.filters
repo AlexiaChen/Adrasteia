@@ -1,0 +1,618 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;cxx;c;def</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{fd3b66b1-58bf-44ee-9b61-562488127775}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{f3ce6170-67c2-4343-bf46-db6c976bdb23}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="SocketServer">
+      <UniqueIdentifier>{4134007d-4bfd-4099-9517-0f5173ea2d61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CachedImpl">
+      <UniqueIdentifier>{6ead9714-80a5-4e62-81e4-e596caee81ba}</UniqueIdentifier>
+      <Extensions>*</Extensions>
+    </Filter>
+    <Filter Include="MainApp">
+      <UniqueIdentifier>{46fbbf56-3f9b-47e3-8d9e-6a02429c8fe1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataProcess">
+      <UniqueIdentifier>{9321543e-8b0b-4200-9622-691811ba55b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Log">
+      <UniqueIdentifier>{93c56a50-cfa4-4d59-a1a9-1b52a17d0748}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TaskManager">
+      <UniqueIdentifier>{dd35c502-6211-414d-9d80-599a97e17021}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XmlConfig">
+      <UniqueIdentifier>{02884eac-4ac8-4b1f-9885-95726da3fb37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task">
+      <UniqueIdentifier>{4778efcb-5008-417f-b88c-c15ab88627bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CJson">
+      <UniqueIdentifier>{4770e2f9-ba62-426b-8e86-80ba2064806d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DDS">
+      <UniqueIdentifier>{1ac678e1-0dd5-4655-a3d8-305e7d216602}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataBase">
+      <UniqueIdentifier>{19124df8-4c9e-4e8a-9e17-cb2619029ef4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{cfb88d83-45c6-4904-9c4e-035c85f77916}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Socket">
+      <UniqueIdentifier>{e09d15a9-783d-41ac-94f4-43325535c9d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ErrerCode">
+      <UniqueIdentifier>{cf9910e1-7e9d-4f02-a7c9-29cd31671add}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataMask">
+      <UniqueIdentifier>{17928f5e-8928-4fa1-a122-f49929697c87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{ff8728ef-5ece-4f7a-960e-197b70265a64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataManage">
+      <UniqueIdentifier>{56f9d393-ae8d-4e40-a9cc-5e74b44ca497}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GeneratedFiles\qrc_nwfdmainapp.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_nwfdtcpserver.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_nwfdtcpserver.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_nwfdtcpsocket.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_nwfdtcpsocket.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="nwfdthreadhandle.cpp">
+      <Filter>SocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="nwfdtcpsocket.cpp">
+      <Filter>SocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="nwfdtcpserver.cpp">
+      <Filter>SocketServer</Filter>
+    </ClCompile>
+    <ClCompile Include="CachedImpl.cpp">
+      <Filter>CachedImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>MainApp</Filter>
+    </ClCompile>
+    <ClCompile Include="HandleNwfdLib.cpp">
+      <Filter>DataProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="ZBase64.cpp">
+      <Filter>CachedImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="log.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TaskBase.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TaskBase.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TaskManager.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TaskManager.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskManager.cpp">
+      <Filter>TaskManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TaskProductRaw.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TaskProductRaw.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlConfig.cpp">
+      <Filter>XmlConfig</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TaskTcpServer.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TaskTcpServer.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TaskProductMerge.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TaskProductMerge.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="ProviderBase.cpp">
+      <Filter>CachedImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskBase.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskProductMerge.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskProductRaw.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskTcpServer.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="JSON.cpp">
+      <Filter>CJson</Filter>
+    </ClCompile>
+    <ClCompile Include="HandleDataProLib.cpp">
+      <Filter>DataProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="DataProInterface.cpp">
+      <Filter>DataProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="HandleGrib.cpp">
+      <Filter>DataProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="cJSON.cpp">
+      <Filter>CJson</Filter>
+    </ClCompile>
+    <ClCompile Include="nwfdmainapp.cpp">
+      <Filter>MainApp</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_DBConnPool.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_DBConnPool.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="DBConnPool.cpp">
+      <Filter>DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskDDS.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TaskDDS.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TaskDDS.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="DDSManager.cpp">
+      <Filter>DDS</Filter>
+    </ClCompile>
+    <ClCompile Include="HandleDB.cpp">
+      <Filter>DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="DDSBase.cpp">
+      <Filter>DDS</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_DDSBase.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_DDSBase.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="DDSFtp.cpp">
+      <Filter>DDS</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_DDSFtp.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_DDSFtp.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="DataProcesser.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkManager.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="FTP.cpp">
+      <Filter>DDS</Filter>
+    </ClCompile>
+    <ClCompile Include="Mask.cpp">
+      <Filter>DataMask</Filter>
+    </ClCompile>
+    <ClCompile Include="DDSMq.cpp">
+      <Filter>DDS</Filter>
+    </ClCompile>
+    <ClCompile Include="Socket.cpp">
+      <Filter>Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="HandleCommon.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CachedImplProc.cpp">
+      <Filter>CachedImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskStationRaw.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TaskStationRaw.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TaskStationRaw.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskStationMerge.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TaskStationMerge.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TaskStationMerge.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskProductClientMerge.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TaskProductClientMerge.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TaskProductClientMerge.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskStationMsg.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TaskStationMsg.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TaskStationMsg.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="HttpSender.cpp">
+      <Filter>DDS</Filter>
+    </ClCompile>
+    <ClCompile Include="DataManager.cpp">
+      <Filter>DataManage</Filter>
+    </ClCompile>
+    <ClCompile Include="HandleInterpolation.cpp">
+      <Filter>DataManage</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_DDSHttp.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_DDSHttp.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="DDSHttp.cpp">
+      <Filter>DDS</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TaskHttpRecver.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TaskHttpRecver.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskHttpRecver.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TaskCached.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TaskCached.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskCached.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="CachedManager.cpp">
+      <Filter>CachedImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskWebMonitor.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TaskSysClean.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TaskSysClean.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskSysClean.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskCheckup.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskFtpRecver.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TaskCheckup.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TaskFtpRecver.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TaskFtpRecver.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TaskCheckup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskFtpSender.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TaskFtpSender.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TaskFtpSender.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="ProductTaskManager.cpp">
+      <Filter>Task</Filter>
+    </ClCompile>
+    <ClCompile Include="HandleStationLib.cpp">
+      <Filter>DataProcess</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="nwfdmainapp.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="nwfdtcpsocket.h">
+      <Filter>SocketServer</Filter>
+    </CustomBuild>
+    <CustomBuild Include="nwfdtcpserver.h">
+      <Filter>SocketServer</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TaskManager.h">
+      <Filter>TaskManager</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TaskBase.h">
+      <Filter>Task</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TaskProductMerge.h">
+      <Filter>Task</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TaskProductRaw.h">
+      <Filter>Task</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TaskTcpServer.h">
+      <Filter>Task</Filter>
+    </CustomBuild>
+    <CustomBuild Include="nwfdmainapp.h">
+      <Filter>MainApp</Filter>
+    </CustomBuild>
+    <CustomBuild Include="DBConnPool.h">
+      <Filter>DataBase</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TaskDDS.h">
+      <Filter>Task</Filter>
+    </CustomBuild>
+    <CustomBuild Include="DDSBase.h">
+      <Filter>DDS</Filter>
+    </CustomBuild>
+    <CustomBuild Include="DDSFtp.h">
+      <Filter>DDS</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TaskStationRaw.h">
+      <Filter>Task</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TaskStationMerge.h">
+      <Filter>Task</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TaskProductClientMerge.h">
+      <Filter>Task</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TaskStationMsg.h">
+      <Filter>Task</Filter>
+    </CustomBuild>
+    <CustomBuild Include="DDSHttp.h">
+      <Filter>DDS</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TaskHttpRecver.h">
+      <Filter>Task</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TaskCheckup.h">
+      <Filter>Task</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TaskCached.h">
+      <Filter>Task</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TaskFtpRecver.h">
+      <Filter>Task</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TaskSysClean.h">
+      <Filter>Task</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TaskFtpSender.h">
+      <Filter>Task</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="nwfdthreadhandle.h">
+      <Filter>SocketServer</Filter>
+    </ClInclude>
+    <ClInclude Include="CachedImpl.h">
+      <Filter>CachedImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="HandleNwfdLib.h">
+      <Filter>DataProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="NWFD-g2clib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ZBase64.h">
+      <Filter>CachedImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="log.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlConfig.h">
+      <Filter>XmlConfig</Filter>
+    </ClInclude>
+    <ClInclude Include="logDef.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="ProductDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProviderBase.h">
+      <Filter>CachedImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskDef.h">
+      <Filter>Task</Filter>
+    </ClInclude>
+    <ClInclude Include="CachedDef.h">
+      <Filter>CachedImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="cJSON.h">
+      <Filter>CJson</Filter>
+    </ClInclude>
+    <ClInclude Include="JSON.h">
+      <Filter>CJson</Filter>
+    </ClInclude>
+    <ClInclude Include="HandleDataProLib.h">
+      <Filter>DataProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="DataProInterface.h">
+      <Filter>DataProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="HandleGrib.h">
+      <Filter>DataProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="LibraryDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBaseDef.h">
+      <Filter>DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBaseSQLDef.h">
+      <Filter>DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="DDSDef.h">
+      <Filter>DDS</Filter>
+    </ClInclude>
+    <ClInclude Include="DDSManager.h">
+      <Filter>DDS</Filter>
+    </ClInclude>
+    <ClInclude Include="HandleDB.h">
+      <Filter>DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="DataProcesser.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="ProtocolDef.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkManager.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="FTP.h">
+      <Filter>DDS</Filter>
+    </ClInclude>
+    <ClInclude Include="Mask.h">
+      <Filter>DataMask</Filter>
+    </ClInclude>
+    <ClInclude Include="StationDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HandleStationLib.h">
+      <Filter>DataProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="DDSMq.h">
+      <Filter>DDS</Filter>
+    </ClInclude>
+    <ClInclude Include="Socket.h">
+      <Filter>Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="HandleCommon.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="NwfdClientDef.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="nwfdserverdef.h">
+      <Filter>SocketServer</Filter>
+    </ClInclude>
+    <ClInclude Include="NwfdErrorCode.h">
+      <Filter>ErrerCode</Filter>
+    </ClInclude>
+    <ClInclude Include="HTTPSender.h">
+      <Filter>DDS</Filter>
+    </ClInclude>
+    <ClInclude Include="HttpDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManager.h">
+      <Filter>DataManage</Filter>
+    </ClInclude>
+    <ClInclude Include="HandleInterpolation.h">
+      <Filter>DataManage</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManagerDef.h">
+      <Filter>DataManage</Filter>
+    </ClInclude>
+    <ClInclude Include="CachedManager.h">
+      <Filter>CachedImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskWebMonitor.h">
+      <Filter>Task</Filter>
+    </ClInclude>
+    <ClInclude Include="FtpDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProductTaskManager.h">
+      <Filter>Task</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DesignHelp.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="NwfdServerConfig.xml" />
+    <Xml Include="ProductConfig.xml" />
+    <Xml Include="logconfig.ini">
+      <Filter>Log</Filter>
+    </Xml>
+    <Xml Include="StationConfig.xml" />
+    <Xml Include="MergeConfig.xml" />
+    <Xml Include="ClientConfig.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="README.txt" />
+  </ItemGroup>
+</Project>

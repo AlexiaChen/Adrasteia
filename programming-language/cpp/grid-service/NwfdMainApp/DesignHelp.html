@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<TITLE>设计说明</TITLE>
+</HEAD>
+<BODY>
+
+    AppConfig.xml       系统配置文件，参数通过该文件进行配置，不操作数据库
+
+    NwfdMainApp         主界面类
+
+    NwfdSocketServer   Socket侦听类
+        NwfdSocketClient        多线程数据处理类
+        NwfdSocketThreadPool    线程池类
+        
+    DataWriter 数据写入类
+        RedisImpl       Redis读写操作类
+
+    DataRetriver  数据获取类，处理逻辑在这里
+        DiskProductImpl 磁盘操作类
+        RedisImpl       Redis读写操作类
+
+    对于socket，当前先使用QTcpServer。以后整体替换为 libevent 的事件驱动方法。
+
+</BODY>
+</HTML>

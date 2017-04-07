@@ -1,0 +1,10 @@
+LIBRARY
+EXPORTS
+	nwfd_get_grid2station_data	@1
+	nwfd_get_station2grid_data	@2
+	nwfd_get_rain_data			@3
+	proccess_di_dj				@4
+	proccess_lon_lat			@5
+	nwfd_free_staion			@6
+
+

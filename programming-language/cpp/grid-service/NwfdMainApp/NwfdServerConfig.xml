@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <!-- 默认配置，如果与编辑平台交互没有获取数据，则使用此配置 -->
+  <root>d:/CMISS-NWFD/</root>
+  <cccc>BABJ</cccc>
+  <gridrange lon1="70" lon2="140" lat1="0" lat2="60"></gridrange>
+  
+  <!-- 与编辑平台交互检测 -->
+  <checkup interval="30">
+    <cfg path="./" file="NDataInfo.txt"></cfg>
+  </checkup>
+  
+  <!-- 下载 -->
+  <download>
+    <server type ="ftp" source="NWFD" ip="10.20.71.25" user="babj" password="BABJ111">
+      <scantime interval="5"></scantime>
+      <all url="/NAFP/NWFD/SCMOC/BABJ/LATEST" filename="Z_NWGD_C_BABJ_20160630204457_P_RFFC_SCMOC-TMAX_201607010800_24024.GRB2" savepath="[ROOT]/GRIB2Data/SCMOC/[TYPE]"></all>
+      <!--<products>
+        <product type="TMP" range="3" url="/CIMISS/NAFP/NWFD/SCMOC/BABJ/LATEST" filename="Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-TMP_[YYYY][MM][DD]*03.GRB2" savepath="[ROOT]/GRIB2Data/SCMOC/[TYPE]" savefilename=""></product>
+      </products>-->
+    </server>
+  </download>
+  
+  <!-- 上传 -->
+  <!--<upload  type="ftp" source="NAFD" ip="10.1.72.215" user="" password="">
+    <scantime interval="20"></scantime>
+    <send src="[ROOT]/Upload/wait" filename="*.GRB2" url="." ></send>
+	  <log path="[ROOT]/Upload/log">[YYYY][MM][DD].log</log>
+  </upload>-->
+
+  <!-- 数据分发服务配置  -->
+  <dds interval="600">
+    <server id="1" type="ftp" address="" username="" passwd="" path="d:/data/mq/send/NWGD"></server>
+    <server id="2" type="cp" address="" username="" passwd="" path="d:/data/mq/send/SPCC"></server>
+  </dds>
+  
+  <!-- 清理 -->
+  <clean interval="10800">
+    <log>7</log>
+    <file dir="[ROOT]/GRIB2Data/SCMOC">3</file>
+  </clean>
+
+</config>

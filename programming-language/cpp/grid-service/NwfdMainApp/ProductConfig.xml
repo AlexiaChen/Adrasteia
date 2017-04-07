@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <products>
+
+	<product key="national_05km_TMP_3" name="温度" role="raw" type="TMP" publisher="national" category="0" element="0" statistical="0" status="0" missingval="" lineval="4 20 50 2 0.00"
+           lon1="70.00" lon2="140.0" lat1="0.0" lat2="60.0" di="0.05" dj="0.05" offset="-273.15" TimeRange="3" MaxForecastTime="240" BusinessStatus="" IsWarning="no" >
+      <scanmode>day</scanmode>
+      <scantime interval="600"></scantime>
+	  <decmode>auto</decmode>
+      <srcfolder>[ROOT]/GRIB2Data/SCMOC/[TYPE]</srcfolder>
+      <srcfileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-[TYPE]_[YYYY][MM][DD][HH]00_*[TT].GRB2</srcfileformat>
+      <forecastCfg>
+        <forecast hourtime="08"></forecast>
+		<forecast hourtime="20"></forecast>
+      </forecastCfg>
+	  <dataproc>
+	    <chains id="1" name="" savepath="[ROOT]/MicapsData/SCMOC/[TYPE]" filename="[YYYY][MM][DD][HH].[FFF]" fileformat="micaps">
+		  <chain params="">NwfdRegionalField.dll</chain>
+	    </chains>
+	  </dataproc>
+    </product>
+	
+	<product key="national_05km_TMAX_24" name="最高温" role="raw" type="TMAX" publisher="national" category="0" element="0" statistical="2" status="0" missingval="" lineval="4 20 50 2 0.00"
+           lon1="70.00" lon2="140.0" lat1="0.0" lat2="60.0" di="0.05" dj="0.05" offset="-273.15" TimeRange="24" MaxForecastTime="240" BusinessStatus="" IsWarning="no" >
+      <scanmode>day</scanmode>
+      <scantime interval="600"></scantime>
+	  <decmode>auto</decmode>
+      <srcfolder>[ROOT]/GRIB2Data/SCMOC/[TYPE]</srcfolder>
+      <srcfileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-[TYPE]_[YYYY][MM][DD][HH]00_*[TT].GRB2</srcfileformat>
+      <forecastCfg>
+        <forecast hourtime="08"></forecast>
+		<forecast hourtime="20"></forecast>
+      </forecastCfg>
+	  <dataproc>
+	    <chains id="1" name="" savepath="[ROOT]/MicapsData/SCMOC/[TYPE]" filename="[YYYY][MM][DD][HH].[FFF]" fileformat="micaps">
+		  <chain params="">NwfdRegionalField.dll</chain>
+	    </chains>
+	  </dataproc>
+    </product>
+
+	<product key="national_05km_TMIN_24" name="最低温" role="raw" type="TMIN" publisher="national" category="0" element="0" statistical="3" status="0" missingval="" lineval="4 20 50 2 0.00"
+           lon1="70.00" lon2="140.0" lat1="0.0" lat2="60.0" di="0.05" dj="0.05" offset="-273.15" TimeRange="24" MaxForecastTime="240" BusinessStatus="" IsWarning="no" >
+      <scanmode>day</scanmode>
+      <scantime interval="600"></scantime>
+	  <decmode>auto</decmode>
+      <srcfolder>[ROOT]/GRIB2Data/SCMOC/[TYPE]</srcfolder>
+      <srcfileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-[TYPE]_[YYYY][MM][DD][HH]00_*[TT].GRB2</srcfileformat>
+      <forecastCfg>
+        <forecast hourtime="08"></forecast>
+		<forecast hourtime="20"></forecast>
+      </forecastCfg>
+	  <dataproc>
+	    <chains id="1" name="" savepath="[ROOT]/MicapsData/SCMOC/[TYPE]" filename="[YYYY][MM][DD][HH].[FFF]" fileformat="micaps">
+		  <chain params="">NwfdRegionalField.dll</chain>
+	    </chains>
+	  </dataproc>
+    </product>
+
+	<product key="national_05km_ER03_3" name="3小时降水" role="raw" type="ER03" publisher="national" category="1" element="8" statistical="1" status="0" missingval="" lineval="5.00 1.00 301.00 2 1.00"
+           lon1="70.00" lon2="140.0" lat1="0.0" lat2="60.0" di="0.05" dj="0.05" offset="" TimeRange="3" MaxForecastTime="240" BusinessStatus="" IsWarning="no" >
+      <scanmode>day</scanmode>
+      <scantime interval="600"></scantime>
+	  <decmode>auto</decmode>
+      <srcfolder>[ROOT]/GRIB2Data/SCMOC/[TYPE]</srcfolder>
+      <srcfileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-[TYPE]_[YYYY][MM][DD][HH]00_*[TT].GRB2</srcfileformat>
+      <forecastCfg>
+        <forecast hourtime="08"></forecast>
+		<forecast hourtime="20"></forecast>
+      </forecastCfg>
+	  <dataproc>
+	    <chains id="1" name="" savepath="[ROOT]/MicapsData/SCMOC/[TYPE]" filename="[YYYY][MM][DD][HH].[FFF]" fileformat="micaps">
+		  <chain params="">NwfdRegionalField.dll</chain>
+	    </chains>
+	  </dataproc>
+    </product>
+	
+	<product key="national_05km_ER24_24" name="24小时降水" role="raw" type="ER24" publisher="national" category="1" element="8" statistical="1" status="0" missingval="" lineval="5.00 1.00 301.00 2 1.00"
+           lon1="70.00" lon2="140.0" lat1="0.0" lat2="60.0" di="0.05" dj="0.05" offset="" TimeRange="24" MaxForecastTime="240" BusinessStatus="" IsWarning="no" >
+      <scanmode>day</scanmode>
+      <scantime interval="600"></scantime>
+	  <decmode>auto</decmode>
+      <srcfolder>[ROOT]/GRIB2Data/SCMOC/[TYPE]</srcfolder>
+      <srcfileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-[TYPE]_[YYYY][MM][DD][HH]00_*[TT].GRB2</srcfileformat>
+      <forecastCfg>
+        <forecast hourtime="08"></forecast>
+		<forecast hourtime="20"></forecast>
+      </forecastCfg>
+	  <dataproc>
+	    <chains id="1" name="" savepath="[ROOT]/MicapsData/SCMOC/[TYPE]" filename="[YYYY][MM][DD][HH].[FFF]" fileformat="micaps">
+		  <chain params="">NwfdRegionalField.dll</chain>
+	    </chains>
+	  </dataproc>
+    </product>
+	
+	<product key="national_05km_EDA10_03" name="10米风" role="raw" type="EDA10" publisher="national" category="2" element="2,3" statistical="0" status="0" missingval="" lineval=""
+           lon1="70.00" lon2="140.0" lat1="0.0" lat2="60.0" di="0.05" dj="0.05" offset="" TimeRange="3" MaxForecastTime="240" BusinessStatus="" IsWarning="no" >
+      <scanmode>day</scanmode>
+      <scantime interval="600"></scantime>
+	  <decmode>auto</decmode>
+      <srcfolder>[ROOT]/GRIB2Data/SCMOC/[TYPE]</srcfolder>
+      <srcfileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-[TYPE]_[YYYY][MM][DD][HH]00_*[TT].GRB2</srcfileformat>
+      <forecastCfg>
+        <forecast hourtime="08"></forecast>
+		<forecast hourtime="20"></forecast>
+      </forecastCfg>
+	  <dataproc>
+	    <chains id="1" name="" savepath="[ROOT]/MicapsData/SCMOC/[TYPE]" filename="[YYYY][MM][DD][HH].[FFF]" fileformat="micaps">
+		  <chain params="">NwfdRegionalField.dll</chain>
+	    </chains>
+	  </dataproc>
+    </product>
+
+    <product key="national_05km_ERH_3" name="相对湿度" role="raw" type="ERH" publisher="national" category="1" element="1" statistical="0" status="0" missingval="" lineval="10 0 100 2 0.00"
+           lon1="70.00" lon2="140.0" lat1="0.0" lat2="60.0" di="0.05" dj="0.05" offset="" TimeRange="3" MaxForecastTime="240" BusinessStatus="" IsWarning="no" >
+      <scanmode>day</scanmode>
+      <scantime interval="600"></scantime>
+	  <decmode>auto</decmode>
+      <srcfolder>[ROOT]/GRIB2Data/SCMOC/[TYPE]</srcfolder>
+      <srcfileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-[TYPE]_[YYYY][MM][DD][HH]00_*[TT].GRB2</srcfileformat>
+      <forecastCfg>
+        <forecast hourtime="08"></forecast>
+		<forecast hourtime="20"></forecast>
+      </forecastCfg>
+	  <dataproc>
+	    <chains id="1" name="" savepath="[ROOT]/MicapsData/SCMOC/[TYPE]" filename="[YYYY][MM][DD][HH].[FFF]" fileformat="micaps">
+		  <chain params="">NwfdRegionalField.dll</chain>
+	    </chains>
+	  </dataproc>
+    </product>
+
+	<product key="national_05km_ERHA_24" name="最大相对湿度" role="raw" type="ERHA" publisher="national" category="1" element="1" statistical="2" status="0" missingval="" lineval="10 0 100 2 0.00"
+           lon1="70.00" lon2="140.0" lat1="0.0" lat2="60.0" di="0.05" dj="0.05" offset="" TimeRange="24" MaxForecastTime="240" BusinessStatus="" IsWarning="no" >
+      <scanmode>day</scanmode>
+      <scantime interval="600"></scantime>
+	  <decmode>auto</decmode>
+      <srcfolder>[ROOT]/GRIB2Data/SCMOC/[TYPE]</srcfolder>
+      <srcfileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-[TYPE]_[YYYY][MM][DD][HH]00_*[TT].GRB2</srcfileformat>
+      <forecastCfg>
+        <forecast hourtime="08"></forecast>
+		<forecast hourtime="20"></forecast>
+      </forecastCfg>
+	  <dataproc>
+	    <chains id="1" name="" savepath="[ROOT]/MicapsData/SCMOC/[TYPE]" filename="[YYYY][MM][DD][HH].[FFF]" fileformat="micaps">
+		  <chain params="">NwfdRegionalField.dll</chain>
+	    </chains>
+	  </dataproc>
+    </product>
+
+	<product key="national_05km_ERHI_24" name="最小相对湿度" role="raw" type="ERHI" publisher="national" category="1" element="1" statistical="3" status="0" missingval="" lineval="10 0 100 2 0.00"
+           lon1="70.00" lon2="140.0" lat1="0.0" lat2="60.0" di="0.05" dj="0.05" offset="" TimeRange="24" MaxForecastTime="240" BusinessStatus="" IsWarning="no" >
+      <scanmode>day</scanmode>
+      <scantime interval="600"></scantime>
+	  <decmode>auto</decmode>
+      <srcfolder>[ROOT]/GRIB2Data/SCMOC/[TYPE]</srcfolder>
+      <srcfileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-[TYPE]_[YYYY][MM][DD][HH]00_*[TT].GRB2</srcfileformat>
+      <forecastCfg>
+        <forecast hourtime="08"></forecast>
+		<forecast hourtime="20"></forecast>
+      </forecastCfg>
+	  <dataproc>
+	    <chains id="1" name="" savepath="[ROOT]/MicapsData/SCMOC/[TYPE]" filename="[YYYY][MM][DD][HH].[FFF]" fileformat="micaps">
+		  <chain params="">NwfdRegionalField.dll</chain>
+	    </chains>
+	  </dataproc>
+    </product>
+	
+	<product key="national_10km_ETH_24" name="高温" role="raw" type="ETH" publisher="national" category="0" element="201" statistical="0" status="0" missingval="" lineval="5 0 100 0 0"
+           lon1="70.00" lon2="140.0" lat1="0.0" lat2="60.0" di="0.1" dj="0.1" offset="" TimeRange="24" MaxForecastTime="24" BusinessStatus="" IsWarning="yes" >
+      <scanmode>day</scanmode>
+      <scantime interval="600"></scantime>
+	  <decmode>auto</decmode>
+      <srcfolder>[ROOT]/GRIB2Data/SCMOC/[TYPE]</srcfolder>
+      <srcfileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-[TYPE]_[YYYY][MM][DD][HH]00_*[TT].GRB2</srcfileformat>
+      <forecastCfg>
+        <forecast hourtime="08"></forecast>
+		<forecast hourtime="20"></forecast>
+      </forecastCfg>
+	  <dataproc>
+	    <chains id="1" name="" savepath="[ROOT]/MicapsData/SCMOC/[TYPE]" filename="[YYYY][MM][DD][HH].[FFF]" fileformat="micaps">
+		  <chain params="">NwfdRegionalField.dll</chain>
+		  <chain params="0.1,0.1,0.05,0.05">NwfdScaleLib.dll</chain>
+	    </chains>
+	  </dataproc>
+    </product>
+
+	<product key="national_10km_EFG_24" name="雾" role="raw" type="EFG" publisher="national" category="13" element="201" statistical="0" status="0" missingval="" lineval="5 0 100 0 0"
+           lon1="70.00" lon2="140.0" lat1="0.0" lat2="60.0" di="0.1" dj="0.1" offset="" TimeRange="24" MaxForecastTime="24" BusinessStatus="" IsWarning="yes" >
+      <scanmode>day</scanmode>
+      <scantime interval="600"></scantime>
+	  <decmode>auto</decmode>
+      <srcfolder>[ROOT]/GRIB2Data/SCMOC/[TYPE]</srcfolder>
+      <srcfileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-[TYPE]_[YYYY][MM][DD][HH]00_*[TT].GRB2</srcfileformat>
+      <forecastCfg>
+        <forecast hourtime="08"></forecast>
+		<forecast hourtime="20"></forecast>
+      </forecastCfg>
+	  <dataproc>
+	    <chains id="1" name="" savepath="[ROOT]/MicapsData/SCMOC/[TYPE]" filename="[YYYY][MM][DD][HH].[FFF]" fileformat="micaps">
+		  <chain params="">NwfdRegionalField.dll</chain>
+		  <chain params="0.1,0.1,0.05,0.05">NwfdScaleLib.dll</chain>
+	    </chains>
+	  </dataproc>
+    </product>
+
+	<product key="national_10km_EAR_24" name="强降水" role="raw" type="EAR" publisher="national" category="1" element="201" statistical="0" status="0" missingval="" lineval="5 0 100 0 0"
+           lon1="70.00" lon2="140.0" lat1="0.0" lat2="60.0" di="0.1" dj="0.1" offset="" TimeRange="24" MaxForecastTime="24" BusinessStatus="" IsWarning="yes" >
+      <scanmode>day</scanmode>
+      <scantime interval="600"></scantime>
+	  <decmode>auto</decmode>
+      <srcfolder>[ROOT]/GRIB2Data/SCMOC/[TYPE]</srcfolder>
+      <srcfileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-[TYPE]_[YYYY][MM][DD][HH]00_*[TT].GRB2</srcfileformat>
+      <forecastCfg>
+        <forecast hourtime="08"></forecast>
+		<forecast hourtime="20"></forecast>
+      </forecastCfg>
+	  <dataproc>
+	    <chains id="1" name="" savepath="[ROOT]/MicapsData/SCMOC/[TYPE]" filename="[YYYY][MM][DD][HH].[FFF]" fileformat="micaps">
+		  <chain params="">NwfdRegionalField.dll</chain>
+		  <chain params="0.1,0.1,0.05,0.05">NwfdScaleLib.dll</chain>
+	    </chains>
+	  </dataproc>
+    </product>	
+	
+	<product key="national_10km_ESW_24" name="强对流" role="raw" type="ESW" publisher="national" category="1" element="202" statistical="201" status="0" missingval="" lineval="5 0 100 0 0"
+           lon1="70.00" lon2="140.0" lat1="0.0" lat2="60.0" di="0.1" dj="0.1" offset="" TimeRange="24" MaxForecastTime="24" BusinessStatus="" IsWarning="yes" >
+      <scanmode>day</scanmode>
+      <scantime interval="600"></scantime>
+	  <decmode>auto</decmode>
+      <srcfolder>[ROOT]/GRIB2Data/SCMOC/[TYPE]</srcfolder>
+      <srcfileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-[TYPE]_[YYYY][MM][DD][HH]00_*[TT].GRB2</srcfileformat>
+      <forecastCfg>
+        <forecast hourtime="08"></forecast>
+		<forecast hourtime="20"></forecast>
+      </forecastCfg>
+	  <dataproc>
+	    <chains id="1" name="" savepath="[ROOT]/MicapsData/SCMOC/[TYPE]" filename="[YYYY][MM][DD][HH].[FFF]" fileformat="micaps">
+		  <chain params="">NwfdRegionalField.dll</chain>
+		  <chain params="0.1,0.1,0.05,0.05">NwfdScaleLib.dll</chain>
+	    </chains>
+	  </dataproc>
+    </product>	
+
+  </products>
+</config>
