@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- 服务器Socket侦听信息：端口，最大连接数等 -->
+    <listener>
+        <port>88</port>
+        <maxConnections>16</maxConnections>
+    </listener>
+    <!--  缓存相关配置项  -->
+    <cached>
+        <provider type="memcached">
+            <address>127.0.0.1</address>
+            <port>11211</port>
+        </provider>
+    </cached>
+    <!-- 数据库配置  -->
+    <database maxCon="10" minCon="10">
+        <db username="" address="" port="" type="sqlite" password="" databasename="./nwfd.db"/>
+    </database>
+    <!-- 数据分发服务配置  -->
+    <dds interval="180">
+        <server username="" passwd="" address="" path="D:/Fuck" type="mq" id="9"/>
+        <server username="" passwd="" address="" path="D:/MQ/MQSnd" type="mq" id="4"/>
+        <server username="" passwd="" address="" path="D:/MQ/MQS" type="mq" id="5"/>
+        <server username="" passwd="" address="" path="D:/MQ/Fuck" type="mq" id="10"/>
+    </dds>
+    <!-- 系统维护配置  -->
+    <checkup interval="3600">
+        <log>30</log>
+        <database>8</database>
+    </checkup>
+</config>

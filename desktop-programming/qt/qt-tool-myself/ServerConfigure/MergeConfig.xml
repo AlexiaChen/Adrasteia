@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <products>
+
+    <!-- ============================================================================================================================================================ -->
+    <!-- ===================================================================   Merge Config Start =================================================================== -->
+    <!-- ============================================================================================================================================================ -->
+    <product key="merge_fsol_05km_ttt03" name="温度" role="merge" type="TMP" publisher="national" category="255" element="0" statistical="0" status="0"
+        lon1="70" lon2="140" lat1="0" lat2="60" di="0.1" dj="0.1" offset="273.15"
+        TimeRange="12" MaxForecastTime="24" BusinessStatus="" IsWarning="yes">
+
+      <scantime interval="30">
+        <time hour="" min="" second=""></time>
+      </scantime>
+
+      <forecastCfg>
+        <forecast hourtime="08" filecount="56" RangeTime="3" latestTime="00:00"></forecast>
+        <forecast hourtime="20" filecount="56" RangeTime="3" latestTime="00:00"></forecast>
+      </forecastCfg>
+
+      <savefile savepath="D:/data/gribdata/BESZ/merge/ttt03" filename="TMP_{YYYYMMDDHH}_{FFF}.grib2" dds=""></savefile>
+      <savecached validtime="0"></savecached>
+
+      <relatedproduct>fsol_05km_ttt03</relatedproduct>
+      <template type="blank">9999</template>
+      <mask lon1="70" lon2="140" lat1="0" lat2="60" di="0.1" dj="0.1">./mask/landmask.010</mask>
+      <datasrc>
+        <item clientid="13" lon1="" lon2="" lat1="" lat2="" srcfolder="./client/13/TMP/{YYYYMMDD}" srcfileformat="TMP_yyyymmddhhmiss_YYYYMMDDHH_FFF_TT.grib2"></item>
+        <item clientid="36" lon1="" lon2="" lat1="" lat2="" srcfolder="./client/36/TMP/{YYYYMMDD}" srcfileformat="TMP_yyyymmddhhmiss_YYYYMMDDHH_FFF_TT.grib2"></item>
+      </datasrc>
+    </product>
+
+    <!-- ============================================================================================================================================================ -->
+    <!-- ===================================================================    Merge Config End  =================================================================== -->
+    <!-- ============================================================================================================================================================ -->
+
+  </products>
+</config>

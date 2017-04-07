@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+
+  <!-- 默认配置，如果与编辑平台交互没有获取数据，则使用此配置 -->
+  <root>D:/MathxH/ForWork/bak/loop_test/root</root>
+  <cccc>BEKM</cccc>
+  <gridrange lon1="70" lon2="140" lat1="0" lat2="60"></gridrange>
+  
+  <checkup interval="20">
+    <cfg path="." file="NDataInfo.txt"></cfg>
+  </checkup>
+
+  <download type="ftp" ip="192.168.6.13" user="mathxh" password="mathxh123">
+    <scantime interval="10"></scantime>
+    <auto disabled="yes"></auto>
+    <all url="/download/[YYYY][MM][DD]" filename="*.GRB2" savepath="[ROOT]/[CCCC]/[TYPE]/[YYYY][MM][DD]"></all>
+
+    <products>
+      <product type="TMP" range="" url="/download/[YYYY][MM][DD]/[TYPE]" filename="GDFS_NMC_AMEL_OEFS_[TYPE]_ACHN_LNO_G005_20160611[HH]0007203.GRB2" savepath="[ROOT]/GRIB2Data/SCMOC/[TYPE]/20160611" savefilename=""></product>
+      <product type="ER03" range="" url="/download/[YYYY][MM][DD]/[TYPE]" filename="GDFS_NMC_AMEL_QPF_[TYPE]_ACHN_LNO_G005_20160611[HH]0007203.GRB2" savepath="[ROOT]/GRIB2Data/SCMOC/[TYPE]/20160611" savefilename=""></product>
+      <product type="ER24" range="" url="/download/[YYYY][MM][DD]/[TYPE]" filename="GDFS_NMC_AMEL_QPF_[TYPE]_ACHN_LNO_G005_20160611[HH]0016824.GRB2" savepath="[ROOT]/GRIB2Data/SCMOC/[TYPE]/20160611" savefilename=""></product>
+      <product type="EDA10" range="" url="/download/[YYYY][MM][DD]/[TYPE]" filename="GDFS_NMC_AMEL_QPF_[TYPE]_ACHN_LNO_G005_20160611[HH]0016803.GRB2" savepath="[ROOT]/GRIB2Data/SCMOC/[TYPE]/20160611" savefilename=""></product>
+    </products>
+  </download>
+
+  <upload  type="ftp" ip="192.168.6.13" user="mathxh" password="mathxh123">
+    <scantime interval="10"></scantime>
+    <send src="[ROOT]/Upload/wait/[YYYY][MM][DD]" url="/upload/[YYYY][MM][DD]" filename=""></send>
+    <log path="[ROOT]/Upload/log">[YYYY][MM][DD].log</log>
+  </upload>
+
+  <clean interval="10800">
+    <log>15</log>
+    <file dir=""></file>
+  </clean>
+</config>

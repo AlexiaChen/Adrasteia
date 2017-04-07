@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <!-- CCCC省编码 -->
+  <CCCC>BEKM</CCCC>
+
+  <!-- 服务器Socket侦听信息：端口，最大连接数等 -->
+  <listener>
+    <port>1324</port>
+    <maxConnections>15</maxConnections>
+  </listener>
+
+  <!--  缓存相关配置项  -->
+  <cached>
+      <provider type="memcached">
+        <address>127.0.0.1</address>
+        <port>11211</port>
+	  </provider>
+  </cached>
+
+  <!--  Http相关配置  -->
+  <http>
+    <scantime>
+	  <time hour="05" min="00" second="00"></time>
+	  <time hour="05" min="30" second="00"></time>
+      <time hour="06" min="00" second="00"></time>
+	  <time hour="06" min="30" second="00"></time>
+      <time hour="07" min="00" second="00"></time>
+    </scantime>
+	
+    <download url="http://10.1.64.146/npt/script/NDGD.xml" savepath="/data/national/NWGD" ></download>
+  </http>
+
+  <!-- 数据库配置  -->
+  <database minCon="10" maxCon="10">
+    <db type="sqlite" address="" port="" username="" password="" databasename="./nwfd.db"></db>
+  </database>
+
+  <!-- 数据分发服务配置  -->
+  <dds interval="600">
+    <server id="1" type="mq" address="" username="" passwd="" path="/data/mq/send/NWGD"></server>
+    <server id="2" type="mq" address="" username="" passwd="" path="/data/mq/send/SPCC"></server>
+    <server id="3" type="mq" address="" username="" passwd="" path="/data/mq/send/SPCC6H"></server>
+  </dds>
+
+  <!-- 系统维护配置  -->
+  <checkup interval="10800">
+    <log>15</log>
+    <database>30</database>
+    <file dir="/data/national;/data/lwfd;/data/mq/sendover">60</file>
+  </checkup>
+</config>

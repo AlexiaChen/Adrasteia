@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <products>
+    <!-- 国家指导报 -->
+    <product key="SRC_national_05km_TMP" name="3小时温度国家指导报" role="raw" type="TMP" publisher="" category="0" element="0" statistical="0" status="0"
+               lon1="70" lon2="140" lat1="0" lat2="60" di="0.05" dj="0.05" offset="" TimeRange="3" MaxForecastTime="72" BusinessStatus="" IsWarning="no">
+      <scantime interval="600"></scantime>
+      <srcfolder>/data/national/NWGD/TMP</srcfolder>
+      <srcfileformat>GDFS_NMC_AMEL_OEFS_TMP_ACHN_LNO_G005_YYYYMMDDHH00FFF03.GRB2</srcfileformat>
+      <forecastCfg>
+        <forecast hourtime="08" RangeTime="3"></forecast>
+        <forecast hourtime="20" RangeTime="3"></forecast>
+      </forecastCfg>
+	  <dataproc>
+		<chains id="1" name="省数据" savepath="/data/lwfd/gribdata/TMP" filename="{YYYYMMDDHH}.{FFF}.GRIB2" dds="">
+			<chain params="97.00_106.50_21.00_39.50">libNwfdRegionalField.so</chain>
+		</chains>
+	  </dataproc>
+    </product>
+
+	<product key="national_05km_TMP" name="3小时温度国家指导报" role="raw" type="TMP" publisher="national" category="0" element="0" statistical="0" status="0"
+         lon1="97.00" lon2="106.50" lat1="21.00" lat2="39.50" di="0.05" dj="0.05" offset="" TimeRange="3" MaxForecastTime="72" BusinessStatus="" IsWarning="no">
+      <scantime interval="600"></scantime>
+      <srcfolder>/data/lwfd/gribdata/TMP</srcfolder>
+      <srcfileformat>YYYYMMDDHH.FFF.GRIB2</srcfileformat>
+      <forecastCfg>
+        <forecast hourtime="08" RangeTime="24"></forecast>
+        <forecast hourtime="20" RangeTime="24"></forecast>
+      </forecastCfg>
+      <savecached validtime="86400"></savecached>
+	  <grid2station>yes</grid2station>
+    </product>
+	
+   
+
+    <product key="merge_national_05km_TMP" name="3小时温度" role="merge" type="TMP" publisher="national" category="0" element="0" statistical="0" status="0"
+              lon1="97.00" lon2="106.50" lat1="21.00" lat2="39.50" di="0.05" dj="0.05" offset=""
+              TimeRange="3" MaxForecastTime="72" BusinessStatus="" IsWarning="no">
+      <scantime>
+        <time hour="09" min="50" second="00"></time>
+      </scantime>
+      <forecastCfg>
+        <forecast hourtime="08" filecount="" startHour="08" endHour="20" latestTime="00:00"></forecast>
+      </forecastCfg>
+      <savecached validtime="86400"></savecached>
+      <filemerge savepath="/data/lwfd/merge/TMP" filename="Z_NWGD_C_BEKM_{TIME}_P_RFFC_SPCC-TMP_{YYYYMMDDHH}00_{FFF}03.GRIB2" dds="1"></filemerge>
+      <relatedproduct>national_05km_TMP</relatedproduct>
+      <template type="data">9999.0</template>
+      <mask lon1="97.52" lon2="106.12" lat1="21.14" lat2="29.19" di="0.05" dj="0.05">./mask/mask.005</mask>
+      <datasrc>
+        <item clientid="5300" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+        <item clientid="5301" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+        <item clientid="5303" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+        <item clientid="5304" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+        <item clientid="5305" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+        <item clientid="5306" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+        <item clientid="5307" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+        <item clientid="5308" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+        <item clientid="5309" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+        <item clientid="5323" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+        <item clientid="5325" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+        <item clientid="5326" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+        <item clientid="5327" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+        <item clientid="5328" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+        <item clientid="5329" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+        <item clientid="5331" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+        <item clientid="5332" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+        <item clientid="5333" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+		<item clientid="5334" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+		<item clientid="5335" lon1="" lon2="" lat1="" lat2="" srcfolder="" srcfileformat=""></item>
+      </datasrc>
+      <grid2station>yes</grid2station>
+    </product>
+
+   
+  </products>
+</config>

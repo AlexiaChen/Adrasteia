@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <products>
+        <product status="0" type="ER03" role="raw" lon2="140" dj="0.1" offset="0" MaxForecastTime="48" lat1="60" IsWarning="no" key="national_05km_rain03" element="3" di="0.1" lat2="" category="1" BusinessStatus="" lon1="70" publisher="national" statistical="1" name="3小时降水国家指导报" TimeRange="3">
+            <srcfolder>D:\data\ER03</srcfolder>
+            <srcfileformatEle>Z_NWGD_C_BABJ_yyyymmddhhmiss_P_RFFC_SCMOC-ER03_YYYYMMDDHH00_FFF03.GRIB2</srcfileformatEle>
+            <scantime interval="1800"/>
+            <forecastCfg>
+                <forecast filecount="2" latestTime="" RangeTime="33" hourtime="08" starttime="" endtime=""/>
+                <forecast filecount="1" latestTime="" RangeTime="3" hourtime="20" starttime="" endtime=""/>
+            </forecastCfg>
+            <savecached validtime="86400"/>
+        </product>
+        <product status="0" type="ESW" role="merge" lon2="140" dj="0.1" offset="0" MaxForecastTime="168" lat1="" IsWarning="no" key="merge_befz_05km_esw24" element="0" di="0.1" lat2="" category="233" BusinessStatus="" lon1="70" publisher="province" statistical="0" name="强对流" TimeRange="3">
+            <scantime interval="">
+                <time min="57" hour="10" second="50"/>
+            </scantime>
+            <forecastCfg>
+                <forecast filecount="1" latestTime="" RangeTime="" hourtime="08" starttime="" endtime=""/>
+            </forecastCfg>
+            <savecached validtime="172800"/>
+            <savefile filename="Z_NWGD_C_BEFZ_{CCC}_P_RFFC_SPCC-TMP_{YYYYMMDDHH}00_{FFF}03.GRB2" dds="1" savepath="D:\data\ER03"/>
+            <relatedproduct>national_05km_rain03</relatedproduct>
+            <template type="data">10000</template>
+            <mask lat1="0" di="0.1" lat2="60" lon2="140" lon1="80" dj="0.1">./mask/landmask.010</mask>
+            <datasrc>
+                <item lat1="" clientid="0" srcfileformat="ESW_yyyymmddhhmiss_YYYYMMDDHH_FFF_TT.grib2" lat2="" lon2="" lon1="" srcfolder="/data/lwfd/client/3500/ESW/{YYYYMMDD}"/>
+            </datasrc>
+        </product>
+    </products>
+</config>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+
+  <!-- 站点管理，用于站点，格点转换 -->
+  <stationmange stationlist="./stationlist/station.dat" cityType="town" forecastType ="SLMOF" radius="10" station2grid="yes" publish="yes" validtime="86400"></stationmange>
+
+  <Stations>
+    <!-- 站点数据扫描 - 6小时大城市预报 -->
+    <Station role="raw" Symbol="BEKM" cityType="bigcity" TimeRange="6" MaxForecastTime="72">
+      <scantime interval="600"></scantime>
+      <datasrc>
+        <item dataType="SCMOC" Symbol="BABJ" Description="国家指导报"   srcfolder="/data/national/SCMOC6H" srcfileformat="SEVP_NMC_RFFC_SCMOC6H_EME_ACHN_L88_P9_YYYYMMDDHH00FFFTT.TXT" ></item>
+      </datasrc>
+      <savecached validtime="172800"></savecached>
+    </Station>
+
+    <!-- 站点数据扫描 - 12小时城镇预报 -->
+    <Station role="raw" Symbol="BEKM" cityType="town" TimeRange="12" MaxForecastTime="72">
+      <scantime interval="600"></scantime>
+      <datasrc>
+        <item dataType="SCMOC" Symbol="BABJ" Description="国家指导报"   srcfolder="/data/national/SCMOC" srcfileformat="SEVP_NMC_RFFC_SCMOC_EME_ACHN_L88_P9_YYYYMMDDHH00FFFTT.TXT" ></item>
+      </datasrc>
+      <savecached validtime="172800"></savecached>
+    </Station>
+
+    <!-- 站点数据合并 - 6小时大城市预报 -->
+	
+    <Station role="merge" Symbol="BEKM" cityType="bigcity" TimeRange="6" MaxForecastTime="24">
+      <scantime>
+        <time hour="06" min="15" second="00"></time>
+        <time hour="10" min="00" second="00"></time>
+      </scantime>
+      <Times>
+        <time reportHour="08" stationlist="./stationlist/bigcitystation.dat" rule="SPCC,SLMOF,SCMOC" saveType="SPCC6H">
+          <savefile savepath="/data/lwfd/station/spcc6h" filename="Z_SEVP_C_BEKM_{TIME}_P_RFFC_SPCC6H_{YYYYMMDDHH}00_02406.TXT" dds="3"></savefile>
+        </time>
+      </Times>
+    </Station>
+    <Station role="merge" Symbol="BEKM" cityType="bigcity" TimeRange="6" MaxForecastTime="24">
+      <scantime>
+        <time hour="16" min="00" second="00"></time>
+      </scantime>
+      <Times>
+        <time reportHour="20" stationlist="./stationlist/bigcitystation.dat" rule="SPCC,SLMOF,SCMOC" saveType="SPCC6H">
+          <savefile savepath="/data/lwfd/station/spcc6h" filename="Z_SEVP_C_BEKM_{TIME}_P_RFFC_SPCC6H_{YYYYMMDDHH}00_02406.TXT" dds="3"></savefile>
+        </time>
+      </Times>
+    </Station>
+	
+    <!-- 站点数据合并 - 12小时城镇预报 -->
+	
+    <Station role="merge" Symbol="BEKM" cityType="town" TimeRange="12" MaxForecastTime="168">
+      <scantime>
+        <time hour="04" min="30" second="00"></time>
+      </scantime>
+      <Times>
+        <time reportHour="08" stationlist="./stationlist/townstation1.dat" rule="SPCC,SLMOF,SCMOC" saveType="SPCC">
+          <savefile savepath="/data/lwfd/station/spcc" filename="Z_SEVP_C_BEKM_{TIME}_P_RFFC-SPCC-{YYYYMMDDHH}00-16812.TXT" dds="2"></savefile>
+        </time>
+      </Times>
+    </Station>
+    <Station role="merge" Symbol="BEKM" cityType="town" TimeRange="12" MaxForecastTime="168">
+      <scantime>
+        <time hour="06" min="15" second="00"></time>
+      </scantime>
+      <Times>
+        <time reportHour="08" stationlist="./stationlist/townstation2.dat" rule="SPCC,SLMOF,SCMOC" saveType="SPCC">
+          <savefile savepath="/data/lwfd/station/spcc" filename="Z_SEVP_C_BEKM_{TIME}_P_RFFC-SPCC-{YYYYMMDDHH}00-16812.TXT" dds="2"></savefile>
+        </time>
+      </Times>
+    </Station>
+    <Station role="merge" Symbol="BEKM" cityType="town" TimeRange="12" MaxForecastTime="168">
+      <scantime>
+        <time hour="10" min="00" second="00"></time>
+      </scantime>
+      <Times>
+        <time reportHour="08" stationlist="./stationlist/townstation3.dat" rule="SPCC,SLMOF,SCMOC" saveType="SPCC">
+          <savefile savepath="/data/lwfd/station/spcc" filename="Z_SEVP_C_BEKM_{TIME}_P_RFFC-SPCC-{YYYYMMDDHH}00-16812.TXT" dds="2"></savefile>
+        </time>
+      </Times>
+    </Station>
+	
+    <Station role="merge" Symbol="BEKM" cityType="town" TimeRange="12" MaxForecastTime="168">
+      <scantime>
+        <time hour="15" min="00" second="00"></time>
+        <time hour="16" min="00" second="00"></time>
+      </scantime>
+      <Times>
+        <time reportHour="20" stationlist="./stationlist/townstation4.dat" rule="SPCC,SLMOF,SCMOC" saveType="SPCC">
+          <savefile savepath="/data/lwfd/station/spcc" filename="Z_SEVP_C_BEKM_{TIME}_P_RFFC-SPCC-{YYYYMMDDHH}00-16812.TXT" dds="2"></savefile>
+        </time>
+      </Times>
+    </Station>	
+	
+    <Station role="merge" Symbol="BEKM" cityType="town" TimeRange="12" MaxForecastTime="168">
+      <scantime>
+        <time hour="16" min="00" second="00"></time>
+      </scantime>
+      <Times>
+        <time reportHour="20" stationlist="./stationlist/townstation5.dat" rule="SPCC,SLMOF,SCMOC" saveType="SPCC">
+          <savefile savepath="/data/lwfd/station/spcc" filename="Z_SEVP_C_BEKM_{TIME}_P_RFFC-SPCC-{YYYYMMDDHH}00-16812.TXT" dds="2"></savefile>
+        </time>
+      </Times>
+    </Station>	
+	
+	
+  </Stations>
+
+</config>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <clients>
+        <client username="username" upload="yes" name="云南省" ip="" clientid="5300" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="昆明市" ip="" clientid="5301" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="曲靖市" ip="" clientid="5303" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="玉溪市" ip="" clientid="5304" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="保山市" ip="" clientid="5305" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="昭通市" ip="" clientid="5306" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="丽江市" ip="" clientid="5307" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="思茅市" ip="" clientid="5308" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="临沧市" ip="" clientid="5309" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="楚雄彝族自治州" ip="" clientid="5323" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="红河哈尼族彝族自治州" ip="" clientid="5325" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="文山壮族苗族自治州" ip="" clientid="5326" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="思茅地区" ip="" clientid="5327" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="西双版纳傣族自治州" ip="" clientid="5328" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="大理白族自治州" ip="" clientid="5329" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="德宏傣族景颇族自治州" ip="" clientid="5331" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="丽江地区" ip="" clientid="5332" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="怒江傈僳族自治州" ip="" clientid="5333" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="迪庆藏族自治州" ip="" clientid="5334" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+        <client username="username" upload="yes" name="临沧地区" ip="" clientid="5335" password="password" cachedvalidtime="172800">
+            <grid filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2" savepath="/data/lwfd/client/{CLIENTID}/{TYPE}/{YYYYMMDD}"/>
+        </client>
+    </clients>
+</config>

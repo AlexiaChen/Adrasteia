@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <Stations>
+        <!-- 站点数据扫描 - 6小时大城市预报 -->
+        <!-- 站点数据扫描 - 12小时城镇预报 -->
+        <Station MaxForecastTime="72" role="raw" TimeRange="12" cityType="town" Symbol="BESZ">
+            <!-- 扫描时间 -->
+            <scantime interval="600"/>
+            <!-- 数据源 -->
+            <datasrc>
+                <item srcfileformat="Z_SEVP_C_BEFZ_yyyymmddhhmiss_P_RFFC-SPCC-YYYYMMDDHH00-FFFTT.txt" dataType="SPCC" srcfolder="D:\data\BEFZ" Description="福建省指导报" Symbol="BEFZ"/>
+            </datasrc>
+            <!-- 缓存存储 -->
+            <savecached validtime="172800"/>
+        </Station>
+        <!-- 站点数据合并 - 6小时大城市预报 -->
+        <Station MaxForecastTime="24" role="merge" TimeRange="6" cityType="bigcity" Symbol="BESZ">
+            <!-- 处理时间 -->
+            <scantime interval="34">
+                <time second="00" hour="06" min="45"/>
+                <time second="00" hour="10" min="00"/>
+                <time second="00" hour="16" min="00"/>
+            </scantime>
+            <!-- 时次定义 -->
+            <Times>
+                <time rule="SPCC,SCLMOF,SCMOC" reportHour="08" saveType="SPCC6H" stationlist="./stationlist/besz_bigcity.dat">
+                    <savefile savepath="/data/lwfd/station/spcc6h" dds="" filename="Z_SEVP_C_BESZ_{CCC}_P_RFFC_SPCC6H_{YYYYMMDDHH}00_02406.TXT"/>
+                </time>
+                <time rule="SPCC,SCLMOF,SCMOC" reportHour="20" saveType="SPCC6H" stationlist="./stationlist/besz_bigcity.dat">
+                    <savefile savepath="/data/lwfd/station/spcc6h" dds="" filename="Z_SEVP_C_BESZ_{CCC}_P_RFFC_SPCC6H_{YYYYMMDDHH}00_02406.TXT"/>
+                </time>
+            </Times>
+            <savecached validtime=""/>
+        </Station>
+        <!-- 站点数据合并 - 12小时城镇预报 -->
+        <Station MaxForecastTime="168" role="merge" TimeRange="12" cityType="town" Symbol="BESZ">
+            <!-- 处理时间 -->
+            <scantime>
+                <time second="00" hour="04" min="30"/>
+                <time second="00" hour="06" min="15"/>
+                <time second="00" hour="10" min="00"/>
+                <time second="00" hour="15" min="00"/>
+                <time second="00" hour="16" min="00"/>
+            </scantime>
+            <!-- 时次定义 -->
+            <Times>
+                <time rule="SPCC,SCLMOF,SCMOC" reportHour="08" saveType="SPCC" stationlist="./stationlist/besz_town.dat">
+                    <savefile savepath="/data/lwfd/station/spcc" dds="" filename="Z_SEVP_C_BESZ_{CCC}_P_RFFC-SPCC-{YYYYMMDDHH}00-16812.TXT"/>
+                </time>
+                <time rule="SPCC,SCLMOF,SCMOC" reportHour="20" saveType="SPCC" stationlist="./stationlist/besz_town.dat">
+                    <savefile savepath="/data/lwfd/station/spcc" dds="" filename="Z_SEVP_C_BESZ_{CCC}_P_RFFC-SPCC-{YYYYMMDDHH}00-16812.TXT"/>
+                </time>
+            </Times>
+        </Station>
+    </Stations>
+</config>

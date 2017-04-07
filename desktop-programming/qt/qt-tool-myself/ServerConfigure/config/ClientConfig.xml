@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- 客户端权限配置 -->
+    <clients>
+        <client clientid="00" password="passwd" name="全国" ip="" upload="yes" username="username" cachedvalidtime="86400">
+            <grid savepath="./client/{CLIENTID}/{TYPE}/{YYYYMMDD}" filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2"/>
+            <station savepath="./client/{CLIENTID}/{TYPE}/{YYYYMMDD}" filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2"/>
+        </client>
+        <client clientid="02" password="123456" name="省市" ip="" upload="no" username="math" cachedvalidtime="865">
+            <grid savepath="./client/{CLIENTID12}/{TYPE}/{YYYYMMDD}" filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2"/>
+            <station savepath="./client/{CLIENTID34}/{TYPE}/{YYYYMMDD}" filename="{TYPE}_{CCC}_{YYYYMMDDHH}_{FFF}_{TT}.grib2"/>
+        </client>
+    </clients>
+</config>
