@@ -1,0 +1,14 @@
+﻿Build started 2/20/2016 8:48:45 PM.
+     1>Project "C:\Users\MathxH\Desktop\Key\Key.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\MathxH\software\VS2013\VC\bin\CL.exe /c /ID:\MathxH\software\VisualLeakDetector\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Key.cpp MainWnd.cpp
+         MainWnd.cpp
+     1>c:\users\mathxh\desktop\key\stdafx.h(31): fatal error C1083: Cannot open include file: 'Uilib.h': No such file or directory
+         Key.cpp
+     1>c:\users\mathxh\desktop\key\stdafx.h(31): fatal error C1083: Cannot open include file: 'Uilib.h': No such file or directory
+         Generating Code...
+     1>Done Building Project "C:\Users\MathxH\Desktop\Key\Key.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:04.66

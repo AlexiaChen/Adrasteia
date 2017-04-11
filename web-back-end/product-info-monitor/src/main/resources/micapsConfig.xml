@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+
+	<product key="province_05km_ETM" cccc="BESZ" ccccname="河北省"  name="24小时最高温省指导报" type="ETM"  di="0.05" dj="0.05" range="24" maxforecast="24">
+	    <srcfolder>C:/Users/MathxH/Desktop/SrcFolder/data/grid/xxx/ETM</srcfolder>
+		<recvtime></recvtime>
+		<fileformat>[YY][MM][DD][HH].[FFF]</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	<product key="province_05km_ETN" cccc="BESZ" ccccname="河北省"  name="24小时最低温省指导报" type="ETN"  di="0.05" dj="0.05" range="24" maxforecast="24">
+	    <srcfolder>C:/Users/MathxH/Desktop/SrcFolder/data/grid/xxx/ETN</srcfolder>
+		<recvtime></recvtime>
+		<fileformat>[YY][MM][DD][HH].[FFF]</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	<product key="rovince_05km_TMP" cccc="BESZ" ccccname="河北省"  name="3小时温度省指导报" type="TMP"  di="0.05" dj="0.05" range="3" maxforecast="24">
+	    <srcfolder>C:/Users/MathxH/Desktop/SrcFolder/data/grid/xxx/TMP</srcfolder>
+		<recvtime></recvtime>
+		<fileformat>[YY][MM][DD][HH].[FFF]</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	<product key="province_05km_ER03" cccc="BESZ" ccccname="河北省"  name="3小时降水省指导报" type="ER03"  di="0.05" dj="0.05" range="3" maxforecast="24">
+	    <srcfolder>C:/Users/MathxH/Desktop/SrcFolder/data/grid/xxx/ER03</srcfolder>
+		<recvtime></recvtime>
+		<fileformat>[YY][MM][DD][HH].[FFF]</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	<product key="province_05km_ER24" cccc="BESZ" ccccname="河北省"  name="24小时降水省指导报" type="ER24"  di="0.05" dj="0.05" range="24" maxforecast="24">
+	    <srcfolder>C:/Users/MathxH/Desktop/SrcFolder/data/grid/xxx/ER24</srcfolder>
+		<recvtime></recvtime>
+		<fileformat>[YY][MM][DD][HH].[FFF]</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	<product key="province_05km_EFG" cccc="BESZ" ccccname="河北省"  name="24小时大雾省指导报" type="EFG"  di="0.05" dj="0.05" range="24" maxforecast="24">
+	    <srcfolder>C:/Users/MathxH/Desktop/SrcFolder/data/grid/xxx/EFG</srcfolder>
+		<recvtime></recvtime>
+		<fileformat>[YY][MM][DD][HH].[FFF]</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	<product key="province_05km_ETH" cccc="BESZ" ccccname="河北省"  name="24小时高温省指导报" type="ETH"  di="0.05" dj="0.05" range="24" maxforecast="24">
+	    <srcfolder>C:/Users/MathxH/Desktop/SrcFolder/data/grid/xxx/ETH</srcfolder>
+		<recvtime></recvtime>
+		<fileformat>[YY][MM][DD][HH].[FFF]</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	<product key="province_05km_EAR" cccc="BESZ" ccccname="河北省"  name="24小时强降水省指导报" type="EAR"  di="0.05" dj="0.05" range="24" maxforecast="24">
+	    <srcfolder>C:/Users/MathxH/Desktop/SrcFolder/data/grid/xxx/EAR</srcfolder>
+		<recvtime></recvtime>
+		<fileformat>[YY][MM][DD][HH].[FFF]</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	<product key="province_05km_ESW" cccc="BESZ" ccccname="河北省"  name="24小时强对流省指导报" type="ESW"  di="0.05" dj="0.05" range="24" maxforecast="24">
+	    <srcfolder>C:/Users/MathxH/Desktop/SrcFolder/data/grid/xxx/ESW</srcfolder>
+		<recvtime></recvtime>
+		<fileformat>[YY][MM][DD][HH].[FFF]</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	
+	
+
+</products>

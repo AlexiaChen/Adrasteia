@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+ <product key="province_05km_ER03" cccc="BABJ" ccccname="北京市"  name="测试降水03指导报" type="TMP"  di="0.05" dj="0.05" range="3" maxforecast="168">
+		<shouldtime>8:0:0</shouldtime>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+</product>
+
+ <product key="province_05km_ER24" cccc="BABJ" ccccname="北京市"  name="测试降水24指导报" type="TMP"  di="0.05" dj="0.05" range="3" maxforecast="168">
+		<shouldtime>8:0:0</shouldtime>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+</product>
+
+</products>

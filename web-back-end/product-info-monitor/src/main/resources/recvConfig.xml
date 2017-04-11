@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+
+    <product key="national_05km_TMP" cccc="BABJ" ccccname="北京市"  name="3小时间隔10公里温度国家指导报" type="TMP"  di="0.05" dj="0.05" range="3" maxforecast="168">
+	    <srcfolder>C:/Users/MathxH/Desktop/SrcFolder/data/national/NWGD/TMP</srcfolder>
+		<recvtime></recvtime>
+		<fileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-TMP_[YYYY][MM][DD][HH]00_16803.GRIB2</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	 <product key="national_10km_EFG" cccc="BABJ" ccccname="北京市"  name="24小时大雾预警国家指导报" type="EFG"  di="0.1" dj="0.1" range="24" maxforecast="24">
+	    <srcfolder>C:/Users/MathxH/Desktop/SrcFolder/data/national/NWGD/EFG</srcfolder>
+		<recvtime></recvtime>
+		<fileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-EFG_[YYYY][MM][DD][HH]00_02424.GRIB2</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	 <product key="national_05km_ER03" cccc="BABJ" ccccname="北京市"  name="3小时降水国家指导报" type="ER03"  di="0.05" dj="0.05" range="3" maxforecast="48">
+	    <srcfolder>C:/Users/MathxH/Desktop/SrcFolder/data/national/NWGD/ER03</srcfolder>
+		<recvtime></recvtime>
+		<fileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-ER03_[YYYY][MM][DD][HH]00_04803.GRIB2</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	
+	 <product key="national_05km_ER24" cccc="BABJ" ccccname="北京市"  name="24小时降水国家指导报" type="ER24"  di="0.1" dj="0.1" range="24" maxforecast="48">
+	    <srcfolder>C:/Users/MathxH/Desktop/SrcFolder/data/national/NWGD/ER24</srcfolder>
+		<recvtime></recvtime>
+		<fileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-ER24_[YYYY][MM][DD][HH]00_04824.GRIB2</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	 <product key="national_10km_ETH" cccc="BABJ" ccccname="北京市"  name="24小时高温预警国家指导报" type="ETH"  di="0.1" dj="0.1" range="24" maxforecast="24">
+	    <srcfolder>C:/Users/MathxH/Desktop/SrcFolder/data/national/NWGD/ETH</srcfolder>
+		<recvtime></recvtime>
+		<fileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-ETH_[YYYY][MM][DD][HH]00_02424.GRIB2</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	<product key="national_05km_EAR" cccc="BABJ" ccccname="北京市"  name="24小时强降水国家指导报" type="EAR"  di="0.05" dj="0.05" range="24" maxforecast="24">
+	    <srcfolder>C:/Users/MathxH/Desktop/SrcFolder/data/national/NWGD/EAR</srcfolder>
+		<recvtime></recvtime>
+		<fileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-EAR_[YYYY][MM][DD][HH]00_02424.GRIB2</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	<product key="national_05km_ESW" cccc="BABJ" ccccname="北京市"  name="24小时强对流国家指导报" type="ESW"  di="0.05" dj="0.05" range="24" maxforecast="24">
+	    <srcfolder>C:/Users/MathxH/Desktop/SrcFolder/data/national/NWGD/ESW</srcfolder>
+		<recvtime></recvtime>
+		<fileformat>Z_NWGD_C_BABJ_*_P_RFFC_SCMOC-ESW_[YYYY][MM][DD][HH]00_02424.GRIB2</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+
+</products>

@@ -1,0 +1,69 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>div + css宽度自适应（液态布局）</title>
+    <style type="text/css">
+        #container
+        {
+            display: table;
+            width: 300px;
+            border: 1px solid gray;
+            table-layout: fixed;
+        }
+        
+        .row
+        {
+            display: table-row;
+        }
+        
+        .left, .right, .middle
+        {
+            display: table-cell;
+            border: 1px solid red;
+            overflow: hidden;
+            white-space: nowrap;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+        }
+        .right
+        {
+            width: 20px;
+        }
+        .middle
+        {
+            width: 20px;
+        }
+        
+        .cell
+        {
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="row">
+            <div class="left">
+                Left ColLeft ColLeft ColLeft ColLeft ColLeft ColLeft ColLeft Col
+            </div>
+            <div class="middle">
+                Middle Col
+            </div>
+            <div class="right">
+                Right Col
+            </div>
+        </div>
+        <div class="row">
+            <div class="left">
+                Left Col
+            </div>
+            <div class="middle">
+                Middle Col
+            </div>
+            <div class="right">
+                Right Col
+            </div>
+        </div>
+    </div>
+</body>
+</html>

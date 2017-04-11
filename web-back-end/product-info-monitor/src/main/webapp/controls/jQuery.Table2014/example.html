@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>列表页面</title>
+    <script src="../../jQuery/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../jQuery/jquery-tools-min.js" type="text/javascript"></script>
+    <script src="Table2014.js" type="text/javascript"></script>
+    <link href="Table2014.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+            var data =
+            {
+                title: '表格标题',
+                rows: [
+                    { rownumber: 1, customcode: '2329234', customname: '五金机电厂', updatedate: '2014-08-02', balance: '2023.00', url: 'about:blank' },
+                    { rownumber: 1, customcode: '2329234', customname: '五金机电厂五金机电厂五金机电厂五金机电厂', updatedate: '2014-08-02', balance: '2023.00', url: 'about:blank' },
+                    { rownumber: 1, customcode: '2329234', customname: '五金机电厂', updatedate: '2014-08-02', balance: '2023.00', url: 'about:blank' },
+                    { rownumber: 1, customcode: '2329234', customname: '五金机电厂五金机电厂五金机电厂五金机电厂', updatedate: '2014-08-02', balance: '2023.00', url: 'about:blank' },
+                    { rownumber: 1, customcode: '2329234', customname: '五金机电厂', updatedate: '2014-08-02', balance: '2023.00', url: 'about:blank' },
+                    { rownumber: 1, customcode: '2329234', customname: '五金机电厂五金机电厂五金机电厂五金机电厂', updatedate: '2014-08-02', balance: '2023.00', url: 'about:blank' },
+                    { rownumber: 1, customcode: '2329234', customname: '五金机电厂', updatedate: '2014-08-02', balance: '2023.00', url: 'about:blank' },
+                    { rownumber: 1, customcode: '2329234', customname: '五金机电厂五金机电厂五金机电厂五金机电厂', updatedate: '2014-08-02', balance: '2023.00', url: 'about:blank' },
+                    { rownumber: 1, customcode: '2329234', customname: '五金机电厂', updatedate: '2014-08-02', balance: '2023.00', url: 'about:blank' },
+                    { rownumber: 1, customcode: '2329234', customname: '五金机电厂五金机电厂五金机电厂五金机电厂', updatedate: '2014-08-02', balance: '2023.00', url: 'about:blank' }
+                ]
+            };
+            showTable(data);
+        });
+        function showTable(tableData) {
+            var table = $("#tableExample").table2014({
+                tableTitle: true,
+                tableHeader: true,
+                hoverColor: true,
+                data: tableData,
+                columns:
+                    [
+                        { header: '行号', colName: 'testRender', width: 0, align: 'left',
+                            render: function (row, rowNumber) {
+                                return rowNumber;
+                            }
+                        },
+                        { header: '客户代码', colName: 'customcode', width: 150, align: 'center' },
+                        { header: '客户名称', colName: 'customname', width: 200, align: 'left', href: 'url', target: '_blank' },
+                        { header: '更新日期', colName: 'updatedate', width: 150, align: 'left' },
+                        { header: '平衡量', colName: 'balance', width: 150, align: 'right', type: 'currency' }
+                    ],
+                onSortCol: function (colName, sortAsc) {
+                    //window.status = 'sort: ' + colName + ', asc: ' + sortAsc;
+                }
+            });
+        }
+    </script>
+    <style type="text/css">
+        .table-container
+        {
+            width: 1000px;
+        }
+        
+        #tableExample
+        {
+            width: 1000px;
+        }
+        
+        .table-cell
+        {
+            border-bottom: 1px solid gray;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <div class="table2014">
+            <div class="table-title-container">
+                <div class="table-title-icon table-icon-default">
+                </div>
+                <div class="table-title-text">
+                    标题内容</div>
+                <div class="hrline">
+                </div>
+            </div>
+            <div class="table-content-container table-fixed">
+                    
+                <div class="table-row table-header">
+                    <div class="table-cell col-1">
+                        <a href="#">主题<span class="sortor sortasc"></span></a>
+                    </div>
+                    <div class="table-cell col-2">
+                        <a href="#">作者<span class="sortor sortdesc"></span></a>
+                    </div>
+                    <div class="table-cell col-3">
+                        <a href="#">发布时间</a>
+                    </div>
+                    <div class="table-cell col-4">
+                        <a href="#">阅读</a>
+                    </div>
+                    <div class="table-cell col-5">
+                        <a href="#">评论</a>
+                    </div>
+                </div>
+                <div class="table-row table-content">
+                    <div class="table-cell linktext">
+                        <a href="#">公司召开董事会第十二次（临时）会议和战略发展委员会第七次会议会议和战略发展委员会第七次会议会议和战略发展委员会第七次会议会议和战略发展委员会第七次会议</a></div>
+                    <div class="table-cell">
+                        李青</div>
+                    <div class="table-cell">
+                        2014-04-16</div>
+                    <div class="table-cell">
+                        20</div>
+                    <div class="table-cell">
+                        10</div>
+                </div>
+                <div class="table-row table-content">
+                    <div class="table-cell linktext">
+                        <a href="#">公司召开董事会第十二次（临时）会议和战略发展委员会第七次会议</a></div>
+                    <div class="table-cell">
+                        李青李青李青李青李青李青李青</div>
+                    <div class="table-cell">
+                        2014-04-16</div>
+                    <div class="table-cell">
+                        20</div>
+                    <div class="table-cell">
+                        10</div>
+                </div>
+            </div>
+    </div>
+    </div>
+    <br />
+    <br />
+    <div id="tableExample">
+    </div>
+    <br />
+    <div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<!-- MQ Server 配置 -->
+	<mqserver>
+		<serverip>10.1.72.34</serverip>
+		<sendport>41111</sendport>
+		<recvport>41112</recvport>
+		<!-- MQServer所在地编码 -->
+		<source>BESZ</source>
+	</mqserver>
+	
+	<!-- 文件发送配置 -->
+	<!-- 文件发送配置 -->
+	<send>
+		<product>
+		    <queuekey>NWGD</queuekey>
+		    <productkey>province_05km_TMP</productkey>
+			<scanfolder>/data/mq/send/NWGD/TMP</scanfolder>
+			<fileformat>Z_NWGD_C_BESZ_*_P_RFFC_SPCC-TMP_[YYYY][MM][DD][HH]00_16803.GRIB2</fileformat>
+			<reporttime>08,20</reporttime>
+			<sendoverfolder>/data/mq/sendover/NWGD/TMP</sendoverfolder>
+		</product>
+        
+        <product>
+		    <queuekey>NWGD</queuekey>
+		    <productkey>province_05km_ER24</productkey>
+			<scanfolder>/data/mq/send/NWGD/ER24</scanfolder>
+			<fileformat>Z_NWGD_C_BESZ_*_P_RFFC_SPCC-ER24_[YYYY][MM][DD][HH]00_07224.GRIB2</fileformat>
+			<reporttime>08,20</reporttime>
+			<sendoverfolder>/data/mq/sendover/NWGD/ER24</sendoverfolder>
+		</product>
+        
+        <product>
+		    <queuekey>NWGD</queuekey>
+		    <productkey>province_05km_ER03</productkey>
+			<scanfolder>/data/mq/send/NWGD/ER03</scanfolder>
+			<fileformat>Z_NWGD_C_BESZ_*_P_RFFC_SPCC-ER03_[YYYY][MM][DD][HH]00_07203.GRIB2</fileformat>
+			<reporttime>08,20</reporttime>
+			<sendoverfolder>/data/mq/sendover/NWGD/ER03</sendoverfolder>
+		</product>	
+        
+        <product>
+		    <queuekey>NWGD</queuekey>
+		    <productkey>province_05km_EFG</productkey>
+			<scanfolder>/data/mq/send/NWGD/EFG</scanfolder>
+			<fileformat>Z_NWGD_C_BESZ_*_P_RFFC_SPCC-EFG_[YYYY][MM][DD][HH]00_02424.GRB2</fileformat>
+			<reporttime>08,20</reporttime>
+			<sendoverfolder>/data/mq/sendover/NWGD/EFG</sendoverfolder>
+		</product>
+		
+		<product>
+		    <queuekey>NWGD</queuekey>
+		    <productkey>province_05km_ETH</productkey>
+			<scanfolder>/data/mq/send/NWGD/ETH</scanfolder>
+			<fileformat>Z_NWGD_C_BESZ_*_P_RFFC_SPCC-ETH_[YYYY][MM][DD][HH]00_02424.GRB2</fileformat>
+			<reporttime>08,20</reporttime>
+			<sendoverfolder>/data/mq/sendover/NWGD/ETH</sendoverfolder>
+		</product>
+		
+		<product>
+		    <queuekey>NWGD</queuekey>
+		    <productkey>province_05km_EAR</productkey>
+			<scanfolder>/data/mq/send/NWGD/EAR</scanfolder>
+			<fileformat>Z_NWGD_C_BESZ_*_P_RFFC_SPCC-EAR_[YYYY][MM][DD][HH]00_02424.GRB2</fileformat>
+			<reporttime>08,20</reporttime>
+			<sendoverfolder>/data/mq/sendover/NWGD/EAR</sendoverfolder>
+		</product>
+		
+		
+		<product>
+		    <queuekey>NWGD</queuekey>
+		    <productkey>province_10km_ESW</productkey>
+			<scanfolder>/data/mq/send/NWGD/ESW</scanfolder>
+			<fileformat>Z_NWGD_C_BESZ_*_P_RFFC_SPCC-ESW_[YYYY][MM][DD][HH]00_02424.GRB2</fileformat>
+			<reporttime>08,20</reporttime>
+			<sendoverfolder>/data/mq/sendover/NWGD/ESW</sendoverfolder>
+		</product>
+		
+	</send>
+	
+	<!-- 文件接收配置 -->
+	<recv>
+		<product>
+		    <queuekey>NWGD</queuekey>
+		    <savefolder>/data/national/NWGD/[TYPE]</savefolder>
+		</product>
+		
+	    <product>
+		    <queuekey>SPCC</queuekey>
+		    <savefolder>/data/national/SPCC</savefolder>
+		</product>
+		
+		<product>
+		    <queuekey>SPCC6H</queuekey>
+		    <savefolder>/data/national/SPCC6H</savefolder>
+		</product>
+	</recv>
+</config>
+

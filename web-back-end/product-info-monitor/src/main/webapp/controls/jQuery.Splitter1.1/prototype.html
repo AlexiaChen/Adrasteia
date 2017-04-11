@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="splitv-Type" content="text/html; charset=utf-8" />
+    <title>jQuery splitter demo</title>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="jquery-ui-1.11.4-draggable.min.js"></script>
+    <style type="text/css" media="all">
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        div[layout=header] {
+            height: 80px;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#154a7d', endColorstr='#2383d2', GradientType='0');
+            background: -moz-linear-gradient(90deg, #2383d2 74%, #154a7d 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, 90deg, color-stop(74%, #2383d2), color-stop(100%, #154a7d)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(90deg, #2383d2 74%, #154a7d 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(90deg, #2383d2 74%, #154a7d 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(90deg, #2383d2 74%, #154a7d 100%); /* IE10+ */
+            background: linear-gradient(0deg, #2383d2 74%, #154a7d 100%); /* W3C */
+        }
+
+        div[layout=splitv] {
+            position: absolute;
+            top: 81px;
+            left: 0px;
+            right: 0px;
+            bottom: 1px;
+        }
+
+        div[layout=left] {
+            height: 100%;
+            width: 295px;
+            padding-left: 5px;
+            border-top: solid 1px #9cbdff;
+            background: #c4dcfb;
+            overflow: auto;
+        }
+
+        div[layout=center] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 306px;
+            background: #f4f4f4;
+            overflow: auto;
+        }
+
+        div[layout=toolbar] {
+            background: #0094ff;
+            height: 25px;
+        }
+
+        div[layout=content] {
+            background: #ffffff;
+            position: absolute;
+            top: 26px;
+            left: 1px;
+            bottom: 1px;
+            right: 1px;
+            overflow: auto;
+            padding: 5px;
+        }
+
+        .splitv-dragbar {
+            position: absolute;
+            left: 300px;
+            top: 0px;
+            width: 4px;
+            height: 100%;
+            line-height: 0px;
+            font-size: 0px;
+            cursor: col-resize;
+            border-left: solid 1px #9cbdff;
+            border-right: solid 1px #9cbdff;
+            background: #cbe1fb url(img/panev.gif) -1px 50%;
+        }
+
+        .splitv-collapse {
+            margin-top: -41px;
+            margin-left: -1px;
+            top: 50%;
+            cursor: pointer;
+            position: relative;
+            height: 83px;
+            width: 6px;
+            background: transparent url(img/panevc.gif) 6px 50%;
+            z-index: 999;
+        }
+
+            .splitv-collapse.invert {
+                background: transparent url(img/panevc.gif) 0px 50%;
+            }
+
+        .logo {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 10px;
+            right: 200px;
+            background: url('Logo.png') no-repeat;
+        }
+
+            .logo span {
+                font-size: 36px;
+                font-family: "微软雅黑";
+                color: #ffffff;
+                letter-spacing: 5px;
+                height: 80px;
+                line-height: 80px;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color=#000)"; /*IE 8*/
+                text-shadow: 2px 2px 2px #000; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+                margin-left: 100px;
+            }
+    </style>
+</head>
+<body>
+    <div layout="header">
+        <div class="logo">
+            <span>UI框架样例</span>
+        </div>
+    </div>
+    <div layout="splitv">
+        <div layout="left">
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsizeThis pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>&nbsp;</p>
+        </div>
+
+        <div class="splitv-dragbar" style="cursor: e-resize;">
+            <div class="splitv-collapse" style="">
+            </div>
+        </div>
+        <!-- #leftPane -->
+        <div layout="center">
+            <div layout="toolbar">Toolbar?</div>
+            <div layout="content">
+                <p>testing</p>
+                <p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p>
+                <p>testing</p>
+                <p>testing</p>
+                <p>testing</p>
+                <p>testing</p>
+                <p>testing</p>
+                <p>testing</p>
+                <p>testing</p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var leftPaneMinWidth = 0;
+        var leftPaneMaxWidth = 1000;
+        var leftPaneWidth = 300;
+        $("div.splitv-dragbar").draggable({
+            axis: 'x', helper: 'clone', iframeFix: true, opacity: 0.75,
+            stop: function (e, ui) {
+                var left = ui.position.left;
+                $('div.splitv-dragbar').css('left', left);
+                // $.outerWidth() - margin - padding - border = $.width()
+                var $left = $('div[layout=left]');
+                $left.width(left - ($left.outerWidth(true) - $left.width()));
+
+                $('div[layout=center]').css('left', left + $('div.splitv-dragbar').outerWidth());
+                $("div.splitv-collapse").removeClass('invert');
+            }, drag: function (event, ui) {
+                // restrict drag distance
+                ui.position.left = ui.position.left < leftPaneMinWidth ? leftPaneMinWidth : ui.position.left;
+                ui.position.left = ui.position.left > leftPaneMaxWidth ? leftPaneMaxWidth : ui.position.left;
+            }
+        });
+
+        $("div.splitv-collapse").click(function () {
+            $(this).toggleClass('invert');
+            var left = 0;
+            if ($(this).hasClass('invert')) {
+                $('div.splitv-dragbar').data('old-left', $('div.splitv-dragbar').position().left);
+            } else {
+                left = $('div.splitv-dragbar').data('old-left');
+                if (left == null || left < leftPaneWidth) left = leftPaneWidth;
+            }
+            $('div.splitv-dragbar').css('left', left);
+            var $left = $('div[layout=left]');
+            $left.width(left - ($left.outerWidth(true) - $left.width()));
+            $('div[layout=center]').css('left', left + $('div.splitv-dragbar').outerWidth());
+
+        });
+    </script>
+</body>
+</html>

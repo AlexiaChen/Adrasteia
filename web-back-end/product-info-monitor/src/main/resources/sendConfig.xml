@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product key="province_05km_TMP"   name="3小时5公里温度省订正报" type="TMP"  di="0.05" dj="0.05" range="3" maxforecast="168">
+		<send>/data/mq/send/NWGD/TMP</send>
+		<sendover>/data/mq/sendover/NWGD/TMP</sendover>
+		<sendtime></sendtime>
+		<fileformat>Z_NWGD_C_BESZ_*_P_RFFC_SPCC-TMP_[YYYY][MM][DD][HH]00_16803.GRIB2</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	<product key="province_05km_ER24"   name="24小时间隔5公里降水省订正报" type="ER24"  di="0.05" dj="0.05" range="24" maxforecast="072">
+		<send>/data/mq/send/NWGD/ER24</send>
+		<sendover>/data/mq/sendover/NWGD/ER24</sendover>
+		<sendtime></sendtime>
+		<fileformat>Z_NWGD_C_BESZ_*_P_RFFC_SPCC-ER24_[YYYY][MM][DD][HH]00_07224.GRIB2</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	<product key="province_05km_ER03"   name="3小时间隔5公里降水省订正报" type="ER03"  di="0.05" dj="0.05" range="3" maxforecast="072">
+		<send>/data/mq/send/NWGD/ER03</send>
+		<sendover>/data/mq/sendover/NWGD/ER03</sendover>
+		<sendtime></sendtime>
+		<fileformat>Z_NWGD_C_BESZ_*_P_RFFC_SPCC-ER03_[YYYY][MM][DD][HH]00_07203.GRIB2</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	<product key="province_05km_EFG"   name="24小时5公里大雾省订正报" type="EFG"  di="0.05" dj="0.05" range="24" maxforecast="024">
+		<send>/data/mq/send/NWGD/EFG</send>
+		<sendover>/data/mq/sendover/NWGD/EFG</sendover>
+		<sendtime></sendtime>
+		<fileformat>Z_NWGD_C_BESZ_*_P_RFFC_SPCC-EFG_[YYYY][MM][DD][HH]00_02424.GRB2</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	
+	<product key="province_05km_ETH"   name="24小时5公里高温省订正报" type="ETH"  di="0.05" dj="0.05" range="24" maxforecast="024">
+		<send>/data/mq/send/NWGD/ETH</send>
+		<sendover>/data/mq/sendover/NWGD/ETH</sendover>
+		<sendtime></sendtime>
+		<fileformat>Z_NWGD_C_BESZ_*_P_RFFC_SPCC-ETH_[YYYY][MM][DD][HH]00_02424.GRB2</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	
+	<product key="province_05km_EAR"   name="24小时5公里强降水省订正报" type="ETH"  di="0.05" dj="0.05" range="24" maxforecast="024">
+		<send>/data/mq/send/NWGD/EAR</send>
+		<sendover>/data/mq/sendover/NWGD/EAR</sendover>
+		<sendtime></sendtime>
+		<fileformat>Z_NWGD_C_BESZ_*_P_RFFC_SPCC-EAR_[YYYY][MM][DD][HH]00_02424.GRB2</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	<product key="province_10km_ESW"   name="24小时10公里强对流省订正报" type="ESW"  di="0.1" dj="0.1" range="24" maxforecast="024">
+		<send>/data/mq/send/NWGD/ESW</send>
+		<sendover>/data/mq/sendover/NWGD/ESW</sendover>
+		<sendtime></sendtime>
+		<fileformat>Z_NWGD_C_BESZ_*_P_RFFC_SPCC-ESW_[YYYY][MM][DD][HH]00_02424.GRB2</fileformat>
+		<reporttimes>
+		    <reporttime hour="08"></reporttime>
+			<reporttime hour="20"></reporttime>
+		</reporttimes>
+	</product>
+	
+	
+</products>

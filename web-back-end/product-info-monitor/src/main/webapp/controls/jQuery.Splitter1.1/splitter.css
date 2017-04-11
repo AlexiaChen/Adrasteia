@@ -1,0 +1,71 @@
+div[data-layout=splitv] {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 1px;
+}
+
+div[data-layout=left] {
+    height: 100%;
+    width: 295px;
+    padding-left: 5px;
+    border-top: solid 1px #9cbdff;
+    overflow: auto;
+}
+
+div[data-layout=center] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 306px;
+    background: #f4f4f4;
+    overflow: auto;
+}
+
+div[data-layout=toolbar] {
+    background: #fff;
+    height: 35px;
+    padding:5px 10px 0 5px;
+}
+
+div[data-layout=content] {
+    background: #ffffff;
+    position: absolute;
+    top: 36px;
+    left: 1px;
+    bottom: 1px;
+    right: 1px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.splitv-dragbar {
+    position: absolute;
+    left: 300px;
+    top: 0px;
+    width: 4px;
+    height: 100%;
+    line-height: 0px;
+    font-size: 0px;
+    cursor: col-resize;
+    border-left: solid 1px #9cbdff;
+    border-right: solid 1px #9cbdff;
+    background: #cbe1fb url(img/panev.gif) -1px 50%;
+}
+
+.dragbar-collapse {
+    margin-top: -41px;
+    margin-left: -1px;
+    top: 50%;
+    cursor: pointer;
+    position: relative;
+    height: 83px;
+    width: 6px;
+    background: transparent url(img/panevc.gif) 6px 50%;
+    z-index: 999;
+}
+
+    .dragbar-collapse.invert {
+        background: transparent url(img/panevc.gif) 0px 50%;
+    }

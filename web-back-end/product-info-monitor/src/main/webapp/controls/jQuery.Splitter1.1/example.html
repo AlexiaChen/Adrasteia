@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="splitv-Type" content="text/html; charset=utf-8" />
+    <title>jQuery splitter demo</title>
+    <link href="splitter.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="jquery-ui-1.11.4-draggable.min.js"></script>
+    <style type="text/css" media="all">
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+
+        div[data-layout=header] {
+            height: 80px;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#154a7d', endColorstr='#2383d2', GradientType='0');
+            background: -moz-linear-gradient(90deg, #2383d2 74%, #154a7d 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, 90deg, color-stop(74%, #2383d2), color-stop(100%, #154a7d)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(90deg, #2383d2 74%, #154a7d 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(90deg, #2383d2 74%, #154a7d 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(90deg, #2383d2 74%, #154a7d 100%); /* IE10+ */
+            background: linear-gradient(0deg, #2383d2 74%, #154a7d 100%); /* W3C */
+        }
+
+        div[data-layout=splitv] {
+            top: 81px;
+        }
+
+        .logo {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 10px;
+            right: 200px;
+            background: url('Logo.png') no-repeat;
+        }
+
+            .logo span {
+                font-size: 36px;
+                font-family: "微软雅黑";
+                color: #ffffff;
+                letter-spacing: 5px;
+                height: 80px;
+                line-height: 80px;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color=#000)"; /*IE 8*/
+                text-shadow: 2px 2px 2px #000; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+                margin-left: 100px;
+            }
+    </style>
+</head>
+<body>
+    <div data-layout="header">
+        <div class="logo">
+            <span>UI框架样例</span>
+        </div>
+    </div>
+    <div data-layout="splitv">
+        <div data-layout="left">
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsizeThis pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>
+                This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                properties of the plugin..
+            </p>
+            <p>&nbsp;</p>
+        </div>
+
+        <div class="splitv-dragbar" style="cursor: e-resize;">
+            <div class="dragbar-collapse" style="">
+            </div>
+        </div>
+        <!-- #leftPane -->
+        <div data-layout="center">
+            <div data-layout="toolbar">Toolbar?</div>
+            <div data-layout="content">
+                <p>testing</p>
+                <p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p><p>
+                    This pane limited to a range of 100 to 300 pixels wide with the minAsize / maxAsize
+                    properties of the plugin..
+                </p>
+                <p>testing</p>
+                <p>testing</p>
+                <p>testing</p>
+                <p>testing</p>
+                <p>testing</p>
+                <p>testing</p>
+                <p>testing</p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="splitter.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+﻿div, a, em, font, img
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: middle;
+    background: transparent;
+}
+
+.table2014
+{
+    font-size: 15px;
+    font-family: "Microsoft YaHei";
+    letter-spacing: 1px;
+    line-height: 28px;
+    padding: 0 5px 0px 5px;
+}
+
+.table2014 .table-title-container
+{
+    position: relative;
+}
+
+.table2014 .table-title-icon
+{
+    display: inline-block;
+    width: 48px;
+    height: 36px;
+}
+
+.table2014 .table-icon-default
+{
+    background: url(images/DefaultTableIcon.png) no-repeat;
+}
+
+.table2014 .table-title-text
+{
+    display: inline-block;
+    font-size: 18px;
+    color: #bd0707;
+    text-align: left;
+    text-decoration: none;
+    height: 36px;
+    line-height: 36px;
+}
+.table2014 .table-content-container
+{
+    width: 100%;
+    position: relative;
+}
+
+.table2014 .table-header
+{
+    white-space: nowrap;
+}
+.table2014 .table-header a
+{
+    font-size: 15px;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+.table2014 .table-header a:link, .table2014 .table-header a:visited
+{
+    color: #063e7c;
+    outline: none;
+    text-decoration: none;
+    font-weight: normal;
+}
+.table2014 .table-header a:hover
+{
+    text-decoration: underline;
+}
+
+.table2014 .table-content
+{
+    font-size: 15px;
+}
+
+.table2014 .linktext
+{
+    color: #063e7c;
+}
+
+.table2014 .linktext a:link
+{
+    color: #063e7c;
+    outline: none;
+    text-decoration: none;
+}
+.table2014 .linktext a:visited
+{
+    color: #963e7c;
+    text-decoration: none;
+}
+.table2014 .linktext a:active
+{
+    color: #063e7c;
+    text-decoration: none;
+}
+.table2014 .linktext a:hover
+{
+    color: #ff0000;
+    text-decoration: underline;
+}
+
+.table2014 .hrline
+{
+    width: 100%;
+    height: 3px;
+    background: -moz-linear-gradient(0deg, #2f73ba 60%, #f3f8fb 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, 0deg, color-stop(60%, #2f73ba), color-stop(100%, #f3f8fb)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(0deg, #2f73ba 60%, #f3f8fb 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(0deg, #2f73ba 60%, #f3f8fb 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(0deg, #2f73ba 60%, #f3f8fb 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2f73ba', endColorstr='#f3f8fb', GradientType='1'); /* for IE */
+    background: linear-gradient(90deg, #2f73ba 60%, #f3f8fb 100%); /* W3C */
+}
+
+.TextOverFlowEllipsis
+{
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.table-fixed
+{
+    display: table;
+    table-layout: fixed;
+}
+.table-row
+{
+    display: table-row;
+}
+.table-cell
+{
+    display: table-cell; /*TextOverFlowEllipsis*/
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    padding: 0 5px 0 5px;
+}
+
+.table2014 .row-hovered
+{
+    background-color:peachpuff;
+}
+
+.col-1
+{
+    text-align: left;
+    width: auto;
+}
+.col-2
+{
+    text-align: left;
+    width: 120px;
+}
+.col-3
+{
+    width: 130px;
+    text-align: left;
+}
+.col-4
+{
+    width: 60px;
+    text-align: left;
+}
+.col-5
+{
+    width: 60px;
+}
+
+.sortdesc
+{
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+.sortasc
+{
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-top-width: 0px;
+    border-bottom: 4px solid #000000;
+}
