@@ -1,11 +1,11 @@
 # 3Dscanner
 Related Algorithms
 
-#Related Resources here
+# Related Resources here
 1.<a href = "http://mesh.brown.edu/byo3d/">Build Your Own 3D Scanner: Optical Triangulation for Beginners</a></br>
 2.<a href = "http://www.vision.caltech.edu/bouguetj/calib_doc/">Camera Calibration Toolbox for Matlab</a></br>
 
-#Related Papers here
+# Related Papers here
 1.A comparative review of camera calibrating methods</br>
 2.A Sensor for Simultaneously Capturing Texture and Shape</br>
 3.Flexible Camera Calibration By Viewing a Plane From Unknown Orientations</br>
