@@ -1,3 +1,12 @@
+/*
+async 关键字就是generator函数的语法糖
+await 关键字类似于Generator函数中的yield关键字
+
+相对Generator的优点
+async函数内置Generator执行器
+语义更加清晰，async表示函数中有异步操作，await后面的表达式需要等待结果
+适用性更好，co lib的实现规定，yield后面之能跟Thunk函数和返回promise对象的函数，而await后面可以跟promise对象和原始类型(这时等同同步操作)
+ */
 ///////////////////////////////////////////////
 const makeRequest = () =>
     getJSON()  // getJSON会返回一个promise对象
