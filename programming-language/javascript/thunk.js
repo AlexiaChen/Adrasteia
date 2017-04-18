@@ -45,7 +45,7 @@ var gen2 = function* (){
 };
 
 ((gen_callback) => {
-    console.log('running this machine to simulate  manual execution');
+    console.log('running this machine to simulate  manual execution like co library');
 
     var gen = gen_callback();
     function next(err,data){
