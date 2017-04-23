@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.gdgdocs.org/css?family=Lobster" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <style>
+    .red-text {
+      color: red;
+    }
+    
+    h2 {
+      font-family: Lobster, Monospace;
+    }
+    
+    p {
+      font-size: 16px;
+      font-family: Monospace;
+    }
+    
+    .thick-green-border {
+      border-color: green;
+      border-width: 10px;
+      border-style: solid;
+      border-radius: 50%;
+    }
+    
+    .smaller-image {
+      width: 100px;
+    }
+    
+    .gray-background {
+      background-color: gray
+    }
+    
+    #cat-photo-form {
+      background-color: green
+    }
+  </style>
+
+  <h2 class="red-text">CatPhotoApp</h2>
+
+  <p>Click here for <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img class="smaller-image thick-green-border" alt="A cute orange cat lying on its back" src="http://www.qqpk.cn/Article/UploadFiles/201108/20110810110552519.jpg"></a>
+
+  <div class="gray-background">
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+
+  <form id="cat-photo-form" action="/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+
+</html>
