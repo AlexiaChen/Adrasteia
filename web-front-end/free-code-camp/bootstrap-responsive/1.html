@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://fonts.gdgdocs.org/css?family=Lobster" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+    <style>
+        .red-text {
+            color: red;
+        }
+        
+        h2 {
+            font-family: Lobster, Monospace;
+        }
+        
+        p {
+            font-size: 16px;
+            font-family: Monospace;
+        }
+        
+        .thick-green-border {
+            border-color: green;
+            border-width: 10px;
+            border-style: solid;
+            border-radius: 50%;
+        }
+        
+        .smaller-image {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!--text-center让文本居中-->
+        <h2 class="red-text text-center">CatPhotoApp</h2>
+
+    <p>Click here for <a href="#">cat photos</a>.</p>
+
+    <a href="#"><img class="smaller-image thick-green-border" 
+    src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492925884952&di=444ce8d56b35efa5ae0acf9932b9a402&imgtype=0&src=http%3A%2F%2Fwww.yaochanglai.com%2Fd%2Ffile%2Fziranmima%2Fguaiyizhiwu%2F20170307%2Fxxj2551dswdufrdm5.jpg"></a>
+
+     <!--这样图片的宽度就能完美地适配你的页面的宽度-->
+     <img class="img-responsive" 
+     src="http://photocdn.sohu.com/20140730/Img402888099.jpg"/>
+     <!--bootstrap的按钮风格-->
+     <!--button 元素仅与它所包含的文本一样宽。通过使其成为块级元素，按钮将会伸展并填满页面整个水平空间，
+     任何在它之下的元素都会跟着浮动至该区块的下一行。-->
+     <button class="btn">Like</button>
+     <button class="btn-block">Like 2</button>
+
+    <p>Things cats love:</p>
+    <ul>
+        <li>cat nip</li>
+        <li>laser pointers</li>
+        <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+        <li>flea treatment</li>
+        <li>thunder</li>
+        <li>other cats</li>
+    </ol>
+    <form action="/submit-cat-photo">
+        <label><input type="radio" name="indoor-outdoor"> Indoor</label>
+        <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+        <label><input type="checkbox" name="personality"> Loving</label>
+        <label><input type="checkbox" name="personality"> Lazy</label>
+        <label><input type="checkbox" name="personality"> Crazy</label>
+        <input type="text" placeholder="cat photo URL" required>
+        <button type="submit">Submit</button>
+    </form>
+    </div>
+</body>
+
+</html>
