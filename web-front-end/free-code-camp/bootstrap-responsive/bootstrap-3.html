@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://fonts.gdgdocs.org/css?family=Lobster" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <style>
+        h2 {
+            font-family: Lobster, Monospace;
+        }
+        
+        .thick-green-border {
+            border-color: green;
+            border-width: 10px;
+            border-style: solid;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!--text-center让文本居中-->
+            <div class="col-xs-8">
+                <h2 class="text-primary text-center">CatPhotoApp</h2>
+            </div>
+
+            <div class="col-xs-4">
+                <a href="#"><img class="img-responsive thick-green-border" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492925884952&di=444ce8d56b35efa5ae0acf9932b9a402&imgtype=0&src=http%3A%2F%2Fwww.yaochanglai.com%2Fd%2Ffile%2Fziranmima%2Fguaiyizhiwu%2F20170307%2Fxxj2551dswdufrdm5.jpg"></a>
+            </div>
+        </div>
+
+        <!--这样图片的宽度就能完美地适配你的页面的宽度-->
+        <img class="img-responsive" src="http://photocdn.sohu.com/20140730/Img402888099.jpg" />
+
+        <!--bootstrap网格布局，行中有3列，每个列占4个列宽，适配小屏幕 
+        ex -> extra small(手机屏幕) md->medium（笔记本屏幕） -->
+        <div class="row">
+            <div class="col-xs-4"><button class="btn btn-block btn-primary" style="margin-bottom:5px;margin-top:5px;">Like</button></div>
+            <div class="col-xs-4"><button class="btn btn-block btn-info" style="margin-bottom:5px;margin-top:5px;">Info</button></div>
+            <div class="col-xs-4"><button class="btn btn-block btn-danger" style="margin-bottom:5px;margin-top:5px;">Delete</button></div>
+        </div>
+
+        <p>Things cats <span class="text-danger">love</span>:</p>
+        <ul>
+            <li>cat nip</li>
+            <li>laser pointers</li>
+            <li>lasagna</li>
+        </ul>
+        <p>Top 3 things cats hate:</p>
+        <ol>
+            <li>flea treatment</li>
+            <li>thunder</li>
+            <li>other cats</li>
+        </ol>
+        <form action="/submit-cat-photo">
+            <label><input type="radio" name="indoor-outdoor"> Indoor</label>
+            <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+            <label><input type="checkbox" name="personality"> Loving</label>
+            <label><input type="checkbox" name="personality"> Lazy</label>
+            <label><input type="checkbox" name="personality"> Crazy</label>
+            <input type="text" placeholder="cat photo URL" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
