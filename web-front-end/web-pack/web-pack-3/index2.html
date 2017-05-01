@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>web-pack-3 <%= htmlWebpackPlugin.options.title %></title> <!--模板取值，取出webpack.config.js传过来的值-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--使用inline js的方法提高js加载效率，不然会有冗余的http请求-->
+       <script type="text/javascript">
+         <%= compilation.assets[htmlWebpackPlugin.files.chunks.a.entry.substr(htmlWebpackPlugin.files.publicPath.length)].source() %>
+             
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

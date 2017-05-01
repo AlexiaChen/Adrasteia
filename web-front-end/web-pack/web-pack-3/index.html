@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>web-pack-3 <%= htmlWebpackPlugin.options.title %></title> <!--模板取值，取出webpack.config.js传过来的值-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+    </head>
+    <body>
+        <h2>Now Date:</h2>
+        <p><%=  htmlWebpackPlugin.options.date %></p>
+        <h2> What the property of htmlWebpackPlugin ? </h2>
+        <p><% for(var key in htmlWebpackPlugin) { %>
+        <%= key %>
+        <% } %></p>
+        <h2>Whats the property of the files ? </h2>
+        <p>
+           <% for(var key in htmlWebpackPlugin.files) { %>
+        <%= key %> <%= JSON.stringify(htmlWebpackPlugin.files[key]) %>
+        <% } %> 
+        </p>
+        <h2>What the property of the options ? </h2>
+        <p>
+            <% for(var key in htmlWebpackPlugin.options) { %>
+        <%= key %> <%= JSON.stringify(htmlWebpackPlugin.options[key]) %>
+        <% } %> 
+        </p>
+    </body>
+</html>
