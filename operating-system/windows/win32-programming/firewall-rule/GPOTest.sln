@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GPOTest", "GPOTest.vcxproj", "{E16B6FE2-3725-4C41-B26D-AC1A701CE42B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestRun", "TestRun\TestRun.vcxproj", "{99549DC5-23EF-4B30-8DF8-346AAC99080A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E16B6FE2-3725-4C41-B26D-AC1A701CE42B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E16B6FE2-3725-4C41-B26D-AC1A701CE42B}.Debug|Win32.Build.0 = Debug|Win32
+		{E16B6FE2-3725-4C41-B26D-AC1A701CE42B}.Release|Win32.ActiveCfg = Release|Win32
+		{E16B6FE2-3725-4C41-B26D-AC1A701CE42B}.Release|Win32.Build.0 = Release|Win32
+		{99549DC5-23EF-4B30-8DF8-346AAC99080A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{99549DC5-23EF-4B30-8DF8-346AAC99080A}.Debug|Win32.Build.0 = Debug|Win32
+		{99549DC5-23EF-4B30-8DF8-346AAC99080A}.Release|Win32.ActiveCfg = Release|Win32
+		{99549DC5-23EF-4B30-8DF8-346AAC99080A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
