@@ -1,3 +1,4 @@
+import './css/common.css';
 import layer from './components/layer/layer.js';
 
 function App(){

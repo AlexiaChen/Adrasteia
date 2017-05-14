@@ -1,4 +1,5 @@
 //import tpl from './layer.html';
+//var less = require('./layer.less');
 
 function layer(){
     return {
