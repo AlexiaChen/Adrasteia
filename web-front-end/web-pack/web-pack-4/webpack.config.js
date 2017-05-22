@@ -27,8 +27,26 @@ module.exports = {
                     presets: [
                         'latest'
                     ]
-                }   // 可以删除，然后在package.json中指定也可以
+                }   
+            },
+            {
+                test: /.css$/,
+                loader: 'style-loader!css-loader?importLoaders=1',
+                
+            },
+            {
+                test: /.css$/,
+                loader:'postcss-loader',
+                options: {
+                    plugins: (loader) => [
+                    require('autoprefixer')({
+                        browsers: ['last 5 versions']
+                    })
+                    ]
+                }
+
             }
-        ]
+        ],
+       
     }
 }
