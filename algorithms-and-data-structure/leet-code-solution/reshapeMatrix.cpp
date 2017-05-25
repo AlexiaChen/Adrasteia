@@ -47,7 +47,6 @@ public:
         if (r*c > origin_cols*origin_rows) return nums;
 
         std::vector<std::vector<int>> result(r,std::vector<int>(c));
-        std::vector<int> temp(origin_rows*origin_cols);
         for (int row = 0; row < origin_rows; ++row)
         {
             for (int col = 0; col < origin_cols; ++col)
