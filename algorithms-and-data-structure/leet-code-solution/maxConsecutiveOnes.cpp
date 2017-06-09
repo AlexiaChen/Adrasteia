@@ -1,5 +1,5 @@
 /*
-
+Max Consecutive Ones 
 URL: https://leetcode.com/problems/max-consecutive-ones/#/description
 
 Given a binary array, find the maximum number of consecutive 1s in this array.
@@ -28,16 +28,4 @@ public:
         int max = 0,  count = 0;
         for(auto const n : nums)
         {
-            max = std::max(max, count = (n == 0) ? 0 : ++count);
-        }
-        return max;
-    }
-};
-
-int main()
-{
-   Solution sln;
-   std::vector<int> vec = {1,0,1,1,0,1};
-   std::cout << sln.findMaxConsecutiveOnes(vec) << std::endl;
-   return 0;
-}
+            max = std::max(max, count = (n == 0) ? 0 :
