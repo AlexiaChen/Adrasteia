@@ -28,4 +28,15 @@ public:
         int max = 0,  count = 0;
         for(auto const n : nums)
         {
-            max = std::max(max, count = (n == 0) ? 0 :
+            max = std::max(max, count = (n == 0) ? 0 : ++count);
+        }
+        return max;
+    }
+};
+
+int main()
+{
+   Solution sln;
+   std::vector<int> vec = {1,0,1,1,0,1};
+   std::cout << sln.findMaxConsecutiveOnes(vec) << std::endl;
+}
