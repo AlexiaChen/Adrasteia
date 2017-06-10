@@ -1,10 +1,12 @@
-//import tpl from './layer.html';
-//var less = require('./layer.less');
+import  './layer.less';
+import tpl from './layer.html';
+import ejs_tpl from './layer.ejs';
 
 function layer(){
     return {
         name: 'layer',
-        tpl: tpl
+        tpl: tpl,
+        ejs: ejs_tpl
     };
 }
 

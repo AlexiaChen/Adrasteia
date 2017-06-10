@@ -19,7 +19,7 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /.js$/,
+                test: /\.js$/,
                 exclude: path.resolve(__dirname, 'node_modules/'),
                 include: path.resolve(__dirname, 'src/'),
                 loader: 'babel-loader',
@@ -30,12 +30,12 @@ module.exports = {
                 }   
             },
             {
-                test: /.css$/,
+                test: /\.css$/,
                 loader: 'style-loader!css-loader?importLoaders=1',
                 
             },
             {
-                test: /.css$/,
+                test: /\.css$/,
                 loader:'postcss-loader',
                 options: {
                     plugins: (loader) => [
@@ -45,6 +45,23 @@ module.exports = {
                     ]
                 }
 
+            },
+            {
+                test: /\.less$/,
+                loader: "style-loader!css-loader!postcss-loader!less-loader"
+            },
+            {
+                test: /\.scss$/,
+                loader: "style-loader!css-loader!postcss-loader!sass-loader"
+
+            },
+            {
+                test: /\.html$/,
+                loader: "html-loader"
+            },
+            {
+                test: /\.ejs$/,
+                loader: "ejs-loader"
             }
         ],
        
