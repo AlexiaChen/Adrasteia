@@ -62,7 +62,20 @@ module.exports = {
             {
                 test: /\.ejs$/,
                 loader: "ejs-loader"
+            },
+            {
+                test: /\.(png|jpg|gif|svg)$/i,
+                loaders: ['url-loader?limit=2000&name=assets/[name]-[hash:5].[ext]', //如果超过 2KB的图片，那么就采用urlloader对图片进行Base64编码
+                'image-webpack-loader'] // 压缩图片
+               
             }
+           /* {
+                test: /\.(png|jpg|gif|svg)$/i,
+                loader: "file-loader",
+                query: {
+                    name: "assets/[name]-[hash:5].[ext]"
+                }
+            }*/
         ],
        
     }
