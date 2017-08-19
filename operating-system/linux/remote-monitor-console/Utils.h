@@ -12,6 +12,7 @@ public:
     static void shutDown();
     static void reboot();
     static QString execCmd(const QString& cmd);
+    static void execCmd2(const QString& cmd);
     static QString hardDiskUsage();
     static QString processesInf();
     static QString localIP();

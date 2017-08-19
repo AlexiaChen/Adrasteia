@@ -1,5 +1,8 @@
 #include "Utils.h"
 
+#include <QTextStream>
+#include <QFile>
+
 #ifdef __linux__
 #include <unistd.h>
 #include <netdb.h>
@@ -124,17 +127,30 @@ QString Utils::execCmd(const QString& cmd)
     pclose(fcmd);
 #endif
     qDebug() << "execCmd leave";
+    
+    
+    
     return result;
 }
 
 QString Utils::hardDiskUsage()
 {
+#ifdef WIN32
+    return "60";
+#endif
+
+#ifdef __linux__
     return execCmd("df -h");
+#endif
 }
 
 
 QString Utils::localIP()
 {
+#ifdef WIN32
+    return "192.168.3.11";
+#endif
+
     int sock_fd;
 #ifdef __linux__
     struct ifreq buf[20];
@@ -205,6 +221,9 @@ QString Utils::localIP()
 
 QString Utils::localMAC()
 {
+#ifdef WIN32
+    return "12:23:A8:E6";
+#endif
     int sock_fd;
 #ifdef __linux__
     struct ifreq buf[20];
@@ -281,6 +300,10 @@ QString Utils::localMAC()
 
 QString Utils::cpuUsage()
 {
+#ifdef WIN32
+    return "30";
+#endif
+
     cpuOccupy cpuStat1;
     cpuOccupy cpuStat2;
     int cpuUsage;
@@ -300,11 +323,20 @@ QString Utils::cpuUsage()
 
 QString Utils::lastStartupTime()
 {
+#ifdef WIN32
+    return "2017-8-16 Thu 14:36";
+#endif
+
+#ifdef __linux__
     return execCmd("who -b");
+#endif
 }
 
 QString Utils::memUsage()
 {
+#ifdef WIN32
+    return "70";
+#endif
     memOccupy memstat;
     int memUsage;
     memset(&memstat, 0, sizeof(memOccupy));
@@ -321,5 +353,33 @@ QString Utils::memUsage()
 
 QString Utils::processesInf()
 {
+#ifdef WIN32
+    return "/usr/local/bin/taste /usr/lcoal/bin/mem_cast";
+#endif
+#ifdef __linux__
     return execCmd("ps");
+#endif
+}
+
+void Utils::execCmd2(const QString& cmd)
+{
+    QFile outBashFile("tmp_bash.sh");
+    QString cmdBuf = cmd.trimmed();
+
+    if (outBashFile.open(QFile::WriteOnly | QFile::Text)) {
+        QTextStream s(&outBashFile);
+        s << "#!/usr/bin/env bash" << endl;
+        s << cmdBuf;
+    }
+    else {
+        qDebug() << "Bash File open() fail";
+        return ;
+    }
+    outBashFile.close();
+
+    QString chmodStr = QString("chmod +x %1").arg("tmp_bash.sh");
+    execCmd(chmodStr);
+    
+    system("tmp_bash.sh");
+
 }
