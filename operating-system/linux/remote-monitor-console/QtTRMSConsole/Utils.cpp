@@ -1,8 +1,5 @@
 #include "Utils.h"
 
-#include <QTextStream>
-#include <QFile>
-
 #ifdef __linux__
 #include <unistd.h>
 #include <netdb.h>
@@ -15,6 +12,11 @@
 
 #include <cstdio>
 #include <cstdlib>
+#include <fstream>
+#include <iostream>
+#include <string.h>
+
+#include "Public.h"
 
 typedef struct _cpuOccupy {
     char name[20];
@@ -48,6 +50,8 @@ static void getMemOccupy(memOccupy *memst) {
     sscanf(buf, "%s %lu %s", memOcc->name, &memOcc->total, memOcc->name);
     fgets(buf, sizeof(buf), fp);
     sscanf(buf, "%s %lu %s", memOcc->name, &memOcc->free, memOcc->name);
+
+    fclose(fp);
 }
 
 static void getCpuOccupy(cpuOccupy *cpust) {
@@ -109,31 +113,27 @@ void Utils::reboot()
 #endif
 }
 
-QString Utils::execCmd(const QString& cmd)
+std::string Utils::execCmd(const std::string& cmd)
 {
-    qDebug() << "execCmd entry"; 
 #ifdef __linux__
-    FILE *fcmd = popen(cmd.toStdString().c_str(), "r");
+    FILE *fcmd = popen(cmd.c_str(), "r");
 #endif
-    char buf[4096] = {0};
+    char buf[1024*5] = {0};
 #ifndef __linux__
     FILE *fcmd = NULL;
 #endif
-    QString result;
+    std::string result;
     while (fgets(buf, sizeof(buf), fcmd) != 0) {
-        result.append(QString(buf));
+        result.append(buf);
     }
 #ifdef __linux__
     pclose(fcmd);
 #endif
-    qDebug() << "execCmd leave";
-    
-    
     
     return result;
 }
 
-QString Utils::hardDiskUsage()
+std::string Utils::hardDiskUsage()
 {
 #ifdef WIN32
     return "60";
@@ -145,7 +145,7 @@ QString Utils::hardDiskUsage()
 }
 
 
-QString Utils::localIP()
+std::string Utils::localIP()
 {
 #ifdef WIN32
     return "192.168.3.11";
@@ -161,54 +161,60 @@ QString Utils::localIP()
 #ifdef __linux__
     if ((sock_fd = socket(AF_INET, SOCK_DGRAM, 0)) < 0)
     {
-        qDebug() << "Create socket failed";
-        return QString();
+        //std::cout << "Create socket failed" << std::endl;
+        return std::string();
     }
     ifc.ifc_len = sizeof(buf);
     ifc.ifc_req = buf;
     if (ioctl(sock_fd, SIOCGIFCONF, (char *)&ifc) < 0)
     {
-        qDebug() << "Get a list of interface addresses failed";
-        return QString();
+        //std::cout << "Get a list of interface addresses failed" << std::endl;
+        close(sock_fd);
+        return std::string();
     }
 
     interface_num = ifc.ifc_len / sizeof(struct ifreq);
-    qDebug() << "The number of interfaces is " << interface_num;
+    //std::cout << "The number of interfaces is " << interface_num <<std::endl;
 
     while (interface_num--)
     {
-        qDebug() << "Net device: " << buf[interface_num].ifr_name;
+        //std::cout << "Net device: " << buf[interface_num].ifr_name <<std::endl;
 
-        QString net_device(buf[interface_num].ifr_name);
+        std::string net_device(buf[interface_num].ifr_name);
 
-        if(net_device.compare("lo",Qt::CaseInsensitive) == 0) continue;
+        
+        if(net_device.find("e") == std::string::npos)
+        {
+            continue;
+        }
 
         if (ioctl(sock_fd, SIOCGIFFLAGS, (char *)&buf[interface_num]) < 0)
         {
-            qDebug() << "Get the active flag word of the device";
+            //std::cout << "Get the active flag word of the device" << std::endl;
             continue;
         }
         if (buf[interface_num].ifr_flags & IFF_PROMISC)
-           qDebug() << "Interface is in promiscuous mode";
+           //std::cout << "Interface is in promiscuous mode" << std::endl;
 
         if (buf[interface_num].ifr_flags & IFF_UP)
         {
-            qDebug() << "Interface is running";
+            //std::cout << "Interface is running" << std::endl;
         }
         else
         {
-            qDebug() << "Interface is not running";
+            //std::cout << "Interface is not running" << std::endl;
             continue;
         }
 
         if (ioctl(sock_fd, SIOCGIFADDR, (char *)&buf[interface_num]) < 0)
         {
-            qDebug() << "Get interface address failed";
+            //std::cout << "Get interface address failed" << std::endl;
             continue;
         }
-        QString address;
+       
+        //QString address;
         addr = inet_ntoa(((struct sockaddr_in*)(&buf[interface_num].ifr_addr))->sin_addr);
-        address = QString::fromLocal8Bit(addr);
+        std::string address(addr);
         close(sock_fd);
         return address;
     }
@@ -216,10 +222,10 @@ QString Utils::localIP()
     close(sock_fd);
 #endif
 
-    return QString();
+    return std::string();
 }
 
-QString Utils::localMAC()
+std::string Utils::localMAC()
 {
 #ifdef WIN32
     return "12:23:A8:E6";
@@ -233,48 +239,52 @@ QString Utils::localMAC()
 #ifdef __linux__
     if ((sock_fd = socket(AF_INET, SOCK_DGRAM, 0)) < 0)
     {
-        qDebug() << "Create socket failed";
-        return QString();
+        //std::cout << "Create socket failed" << std::endl;
+        return std::string();
     }
     ifc.ifc_len = sizeof(buf);
     ifc.ifc_req = buf;
     if (ioctl(sock_fd, SIOCGIFCONF, (char *)&ifc) < 0)
     {
-        qDebug() << "Get a list of interface addresses failed";
-        return QString();
+       // std::cout << "Get a list of interface addresses failed" << std::endl;
+        close(sock_fd);
+        return std::string();
     }
     interface_num = ifc.ifc_len / sizeof(struct ifreq);
-    qDebug() << "The number of interfaces is " << interface_num;
+    //std::cout << "The number of interfaces is " << interface_num <<std::endl;
 
     while (interface_num--)
     {
-        qDebug() << "Net device: " << buf[interface_num].ifr_name;
+       // std::cout << "Net device: " << buf[interface_num].ifr_name <<std::endl;
 
-        QString net_device(buf[interface_num].ifr_name);
+        std::string net_device(buf[interface_num].ifr_name);
 
-        if(net_device.compare("lo",Qt::CaseInsensitive) == 0) continue;
+        if(net_device.find("e") == std::string::npos)
+        {
+            continue;
+        }
 
         if (ioctl(sock_fd, SIOCGIFFLAGS, (char *)&buf[interface_num]) < 0)
         {
-            qDebug() << "Get the active flag word of the device";
+            //std::cout << "Get the active flag word of the device" << std::endl;
             continue;
         }
         if (buf[interface_num].ifr_flags & IFF_PROMISC)
-            qDebug() << "Interface is in promiscuous mode";
+            //std::cout << "Interface is in promiscuous mode" << std::endl;
 
         if (buf[interface_num].ifr_flags & IFF_UP)
         {
-            qDebug() << "Interface is running";
+            //std::cout << "Interface is running" << std::endl;
         }
         else
         {
-            qDebug() << "Interface is not running";
+            //std::cout << "Interface is not running" << std::endl;
             continue;
         }
 
         if (ioctl(sock_fd, SIOCGIFHWADDR, (char *)&buf[interface_num]) < 0)
         {
-            qDebug() << "Get the hardware address of a device failed";
+            //std::cout << "Get the hardware address of a device failed" <<std::endl;
             continue;
         }
 
@@ -288,17 +298,17 @@ QString Utils::localMAC()
             (unsigned char)buf[interface_num].ifr_hwaddr.sa_data[4],
             (unsigned char)buf[interface_num].ifr_hwaddr.sa_data[5]);
 
-        QString macAddr = QString::fromLocal8Bit(buffer);
+        std::string macAddr(buffer);
         close(sock_fd);
         return macAddr;
     }
 
     close(sock_fd);
 #endif
-    return QString();
+    return std::string();
 }
 
-QString Utils::cpuUsage()
+std::string Utils::cpuUsage()
 {
 #ifdef WIN32
     return "30";
@@ -318,21 +328,46 @@ QString Utils::cpuUsage()
     getCpuOccupy(&cpuStat2);
     cpuUsage = calCpuOccupy(&cpuStat1, &cpuStat2);
 
-    return QString::number(cpuUsage);
+    char numStr[25] = {0};
+    sprintf(numStr, "%d", cpuUsage);
+    return std::string(numStr);
 }
 
-QString Utils::lastStartupTime()
+static std::string deleteChar(std::string& str)
+{
+    std::string ret;
+    for (int i = 0; i < str.size(); ++i)
+    {
+        if (str[i] > 'a' && str[i] < 'z')
+        {
+           continue;
+        }
+        else if (str[i] > 'A' && str[i] < 'Z')
+        {
+            continue;
+        }
+        else
+        {
+            ret.push_back(str[i]);
+        }
+    }
+    return ret;
+}
+
+std::string Utils::lastStartupTime()
 {
 #ifdef WIN32
     return "2017-8-16 Thu 14:36";
 #endif
 
 #ifdef __linux__
-    return execCmd("who -b");
+    std::string cmdRet = execCmd("who -b");
+    std::string sOutput = deleteChar(cmdRet);
+    return sOutput;
 #endif
 }
 
-QString Utils::memUsage()
+std::string Utils::memUsage()
 {
 #ifdef WIN32
     return "70";
@@ -348,10 +383,12 @@ QString Utils::memUsage()
         memUsage = 0;
 
 
-    return QString::number(memUsage);
+    char numStr[25] = { 0 };
+    sprintf(numStr, "%d", memUsage);
+    return std::string(numStr);
 }
 
-QString Utils::processesInf()
+std::string Utils::processesInf()
 {
 #ifdef WIN32
     return "/usr/local/bin/taste /usr/lcoal/bin/mem_cast";
@@ -361,25 +398,35 @@ QString Utils::processesInf()
 #endif
 }
 
-void Utils::execCmd2(const QString& cmd)
+void Utils::execCmd2(const std::string& cmd)
 {
-    QFile outBashFile("tmp_bash.sh");
-    QString cmdBuf = cmd.trimmed();
+   
 
-    if (outBashFile.open(QFile::WriteOnly | QFile::Text)) {
-        QTextStream s(&outBashFile);
-        s << "#!/usr/bin/env bash" << endl;
-        s << cmdBuf;
+    std::ofstream outBashFile("tmp_bash.sh");
+
+    if (!outBashFile)
+    {
+        //std::cout << "Bash File open() fail" << std::endl;
+        return;
     }
-    else {
-        qDebug() << "Bash File open() fail";
-        return ;
-    }
+
+    outBashFile << "#!/usr/bin/env bash" << std::endl;
+    outBashFile << cmd;
+    
     outBashFile.close();
 
-    QString chmodStr = QString("chmod +x %1").arg("tmp_bash.sh");
-    execCmd(chmodStr);
-    
-    system("tmp_bash.sh");
+    char chmodStr[1024] = { 0 };
+
+    sprintf(chmodStr, "chmod +x %s", "tmp_bash.sh");
+    execCmd(std::string(chmodStr));
+
+    char tmp_bash_path[1024] = { 0 };
+    char tmp_bash_dir[256] = { 0 };
+    strcpy(tmp_bash_dir, execCmd("pwd").c_str());
+    CutBothEndsSpace(tmp_bash_dir);
+   // std::cout << "Cut Space tmp bash dir" << tmp_bash_dir << std::endl;
+    sprintf(tmp_bash_path, "%s/tmp_bash.sh", tmp_bash_dir);
+
+    system(tmp_bash_path);
 
 }
