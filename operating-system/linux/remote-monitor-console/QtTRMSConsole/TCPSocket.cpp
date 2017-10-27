@@ -11,18 +11,11 @@ Client::Client(int iPort, const char* pStrHost,  bool* pResult)
 
     m_iPort = iPort;
     m_iSock = -1;
-    m_pBuffer = NULL;
 
     if (pResult)
         *pResult = false;
 
-    // Allocate our temporary buffers that are used to convert data types
-    m_pBuffer = (char *)malloc(sizeof(char) * CLIENT_BUFF_SIZE);
-    if (!m_pBuffer)
-    {
-        perror("Server::Server, failed to malloc buffer!");
-        return;
-    }
+   
 
 #ifdef _WIN32
     // For Windows, we need to fire up the Winsock DLL before we can do socket stuff.
@@ -79,11 +72,6 @@ Client::~Client()
     WSACleanup();
 #endif
 
-    if (m_pBuffer)
-    {
-        free(m_pBuffer);
-        m_pBuffer = NULL;
-    }
 }
 
 
@@ -109,13 +97,11 @@ bool Client::SendBytes(char* pVals, int iLen)
 int Client::RecvBytes(char* pVals, int iLen)
 {
     int			i = 0;
-    char*		pTemp = NULL;
     int			iNumBytes = 0;
 
-    pTemp = (char *)m_pBuffer;
     memset(pVals, 0, iLen);
 
-    if ((iNumBytes = recv(m_iSock, pTemp, CLIENT_BUFF_SIZE, 0)) == -1)
+    if ((iNumBytes = recv(m_iSock, pVals, iLen, 0)) == -1)
     {
         perror("Client::RecvBytes, recv");
         return -1;
@@ -125,13 +111,6 @@ int Client::RecvBytes(char* pVals, int iLen)
     {
         //std::cout << "Recb Buffer size < recved size" << std::endl;
         return -1;
-    }
-
-
-    for (i = 0; i < iNumBytes; i++)
-    {
-        pVals[i] = pTemp[i];
-       
     }
 
     return iNumBytes;

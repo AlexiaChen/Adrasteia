@@ -50,7 +50,6 @@ protected:
     int					m_iPort;							// Port I'm listening on
     int					m_iSock;							// Socket connection
     struct sockaddr_in	m_addrRemote;						// Connector's address information
-    char*				m_pBuffer;							// Reuse the same memory for buffer
 
 };
 

@@ -2,7 +2,7 @@
 
 #ifdef __linux__
 #include <arpa/inet.h>
-#include "zlib.h"
+//#include "zlib.h"
 #endif
 
 #ifndef __linux__
@@ -53,7 +53,7 @@ int p_TabPack_Client_Login(char *cBuf, int iBufLen, TCLIENT_LOGIN *client_login)
 {
     if (CLIENT_LOGIN_LEN >= iBufLen)
     {
-        /*Òª´ò°üµÄ×Ö·û´®³¤¶È³¬¹ý»º³åÇø³¤¶È£¬Ö±½Ó·µ»ØÊ§°Ü-1*/
+        /*Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½Ö±ï¿½Ó·ï¿½ï¿½ï¿½Ê§ï¿½ï¿½-1*/
         return -1;
     }
     sprintf(cBuf, "%-16s%-18s%-20s%-4096s", \
@@ -67,7 +67,7 @@ int p_TabUnPack_Client_Login(char *cBuf, TCLIENT_LOGIN* client_login)
     char cTmpBuf[32];
     if (strlen(cBuf) < CLIENT_LOGIN_LEN)
     {
-        /*Òª½â°üµÄ×Ö·û´®³¤¶È²»¹»£¬Ö±½Ó·µ»ØÊ§°Ü-1*/
+        /*Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½Ó·ï¿½ï¿½ï¿½Ê§ï¿½ï¿½-1*/
         return -1;
     }
     memset(client_login, 0, sizeof(TCLIENT_LOGIN));
@@ -97,7 +97,7 @@ int p_TabPack_Client_State(char *cBuf, int iBufLen, TCLIENT_STATE *client_state)
 {
     if (CLIENT_STATE_LEN >= iBufLen)
     {
-        /*Òª´ò°üµÄ×Ö·û´®³¤¶È³¬¹ý»º³åÇø³¤¶È£¬Ö±½Ó·µ»ØÊ§°Ü-1*/
+        /*Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½Ö±ï¿½Ó·ï¿½ï¿½ï¿½Ê§ï¿½ï¿½-1*/
         return -1;
     }
     sprintf(cBuf, "%-16s%-18s%-20s%-3s%-3s%-1024s", \
@@ -111,7 +111,7 @@ int p_TabUnPack_Client_State(char *cBuf, TCLIENT_STATE* client_state)
     char cTmpBuf[32];
     if (strlen(cBuf) < CLIENT_STATE_LEN)
     {
-        /*Òª½â°üµÄ×Ö·û´®³¤¶È²»¹»£¬Ö±½Ó·µ»ØÊ§°Ü-1*/
+        /*Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½Ó·ï¿½ï¿½ï¿½Ê§ï¿½ï¿½-1*/
         return -1;
     }
     memset(client_state, 0, sizeof(TCLIENT_STATE));
@@ -151,7 +151,7 @@ int p_TabPack_ShutDownCmd(char *cBuf, int iBufLen, TSHUTDOWNCMD *shutdowncmd)
 {
     if (SHUTDOWNCMD_LEN >= iBufLen)
     {
-        /*Òª´ò°üµÄ×Ö·û´®³¤¶È³¬¹ý»º³åÇø³¤¶È£¬Ö±½Ó·µ»ØÊ§°Ü-1*/
+        /*Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½Ö±ï¿½Ó·ï¿½ï¿½ï¿½Ê§ï¿½ï¿½-1*/
         return -1;
     }
     sprintf(cBuf, "%-1024s", \
@@ -185,20 +185,20 @@ void AnaData(unsigned char * bBuffer, int iBufLength, TCLIENT_INFO *CLIENT_INFO,
     for (int i = 0; i < iBufLength; i++) {
         bChar = bBuffer[i];
         switch (CLIENT_INFO->CUR_STEP) {
-        case RECV_HEAD: // ½ÓÊÕÍ·ÅÐ¶Ï
+        case RECV_HEAD: // ï¿½ï¿½ï¿½ï¿½Í·ï¿½Ð¶ï¿½
             if (bChar == 0x81) {
                 CLIENT_INFO->CUR_STEP = RECV_SENDER;
             }
             break;
-        case RECV_SENDER: // ·¢ËÍÕßÅÐ¶Ï£¬¿Í»§¶ËÖ»ÄÜ½ÓÊÜ½Úµã·þÎñÆ÷·¢ËÍµÄÊý¾Ý
+        case RECV_SENDER: // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ï£ï¿½ï¿½Í»ï¿½ï¿½ï¿½Ö»ï¿½Ü½ï¿½ï¿½Ü½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½
            
             CLIENT_INFO->CUR_STEP = RECV_RECEIVER;
             break;
-        case RECV_RECEIVER: // ½ÓÊÕÕßÅÐ¶Ï£¬½ÓÊÕÕß±ØÐëÊÇ×Ô¼ºÒ²¾ÍÊÇËµÊÇ
-            /* Ä¿Ç°²»½øÐÐÅÐ¶Ï´¦Àí */
+        case RECV_RECEIVER: // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ï£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½Ò²ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½
+            /* Ä¿Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ï´ï¿½ï¿½ï¿½ */
             CLIENT_INFO->CUR_STEP = RECV_SENDTIME;
             break;
-        case RECV_SENDTIME: // »ñÈ¡Ê±¼ä´Á
+        case RECV_SENDTIME: // ï¿½ï¿½È¡Ê±ï¿½ï¿½ï¿½
             CLIENT_INFO->bFieldBuf[CLIENT_INFO->CUR_IDX++] = bChar;
             if (CLIENT_INFO->CUR_IDX == 4) {
                 CLIENT_INFO->bFieldBuf[CLIENT_INFO->CUR_IDX] = 0;
@@ -209,7 +209,7 @@ void AnaData(unsigned char * bBuffer, int iBufLength, TCLIENT_INFO *CLIENT_INFO,
                 CLIENT_INFO->CUR_IDX = 0;
             }
             break;
-        case RECV_TYPE: // ÅÐ¶ÏÊý¾Ý°üÀàÐÍ
+        case RECV_TYPE: // ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½ï¿½
             CLIENT_INFO->bFieldBuf[CLIENT_INFO->CUR_IDX++] = bChar;
             if (CLIENT_INFO->CUR_IDX == 6) {
                 CLIENT_INFO->bFieldBuf[CLIENT_INFO->CUR_IDX] = 0;
@@ -218,7 +218,7 @@ void AnaData(unsigned char * bBuffer, int iBufLength, TCLIENT_INFO *CLIENT_INFO,
                 CLIENT_INFO->CUR_STEP = RECV_LENGTH;
             }
             break;
-        case RECV_LENGTH: // »ñÈ¡Êý¾Ý³¤¶È
+        case RECV_LENGTH: // ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ý³ï¿½ï¿½ï¿½
             CLIENT_INFO->bFieldBuf[CLIENT_INFO->CUR_IDX++] = bChar;
             if (CLIENT_INFO->CUR_IDX == 4) {
                 CLIENT_INFO->bFieldBuf[CLIENT_INFO->CUR_IDX] = 0;
@@ -232,7 +232,7 @@ void AnaData(unsigned char * bBuffer, int iBufLength, TCLIENT_INFO *CLIENT_INFO,
                 CLIENT_INFO->CUR_IDX = 0;
             }
             break;
-        case RECV_TRUE_LENGTH: // Êý¾ÝµÄÕæÊµ³¤¶È£¬Èç¹ûÊÇÑ¹Ëõ°ü£¬´Ë×Ö¶ÎÎªÑ¹ËõÇ°³¤¶È
+        case RECV_TRUE_LENGTH: // ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶ï¿½ÎªÑ¹ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½
             CLIENT_INFO->bFieldBuf[CLIENT_INFO->CUR_IDX++] = bChar;
             if (CLIENT_INFO->CUR_IDX == 4) {
                 CLIENT_INFO->bFieldBuf[CLIENT_INFO->CUR_IDX] = 0;
@@ -243,7 +243,7 @@ void AnaData(unsigned char * bBuffer, int iBufLength, TCLIENT_INFO *CLIENT_INFO,
                 CLIENT_INFO->CUR_IDX = 0;
             }
             break;
-        case RECV_FLAG: // ·µ»Ø±¨±êÖ¾¡£
+        case RECV_FLAG: // ï¿½ï¿½ï¿½Ø±ï¿½ï¿½ï¿½Ö¾ï¿½ï¿½
             CLIENT_INFO->bFieldBuf[CLIENT_INFO->CUR_IDX++] = bChar;
             if (CLIENT_INFO->CUR_IDX == 4) {
                 CLIENT_INFO->bFieldBuf[CLIENT_INFO->CUR_IDX] = 0;
@@ -270,7 +270,7 @@ void AnaData(unsigned char * bBuffer, int iBufLength, TCLIENT_INFO *CLIENT_INFO,
                 bRecvEnd = true;
                 i += CLIENT_INFO->iLength;
             }
-            else { // ²»¹»ÔòÈ«²¿¿½±´½øÄÚ´æÁ÷¡£
+            else { // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½
                
                // std::copy_n(bBuffer + i, iBufLength - i, std::back_inserter(msRecv));
                 memcpy(CLIENT_INFO->msRecv + CLIENT_INFO->msRecvLength, bBuffer + i, iBufLength-i);
@@ -332,7 +332,7 @@ static void slotRemoteShutDown(const std::string & script)
 
 void AnaPackage(Client* client_tcp, TCLIENT_INFO *serviceInfo)
 {
-    // ¸ù¾Ý°üÀàÐÍ½øÐÐ²»Í¬µÄ´¦Àí
+    // ï¿½ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Í½ï¿½ï¿½Ð²ï¿½Í¬ï¿½Ä´ï¿½ï¿½ï¿½
     bool bError = false, bCompress = false, bCrypt = false;
     GetPackageFLAG(serviceInfo->iPackageFLAG, bError, bCompress, bCrypt);
     unsigned char * recvBuf;
@@ -343,25 +343,25 @@ void AnaPackage(Client* client_tcp, TCLIENT_INFO *serviceInfo)
     memcpy(recvBuf, serviceInfo->msRecv, serviceInfo->msRecvLength );
    
 
-    if (bError) { // ËµÃ÷µ÷ÓÃ³öÏÖ´íÎó£¬ÐèÒªÌáÊ¾´íÎóÐÅÏ¢¡£
+    if (bError) { // Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½
         delete[]recvBuf;
         return;
     }
     
-    // ¸ù¾Ý°üÀàÐÍ½øÐÐ´¦Àí
+    // ï¿½ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Í½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½
     switch (serviceInfo->PackageType)
     {
-    case 2001: // ¿Í»§¶ËÇ©µ½³É¹¦
+    case 2001: // ï¿½Í»ï¿½ï¿½ï¿½Ç©ï¿½ï¿½ï¿½É¹ï¿½
         //emit logined();
         break;
-    case 2002: // ¿Í»§¶ËÇ©ÍË
+    case 2002: // ï¿½Í»ï¿½ï¿½ï¿½Ç©ï¿½ï¿½
         //emit loginOut();
         break;
-    case 2003: // ¿Í»§¶Ë×´Ì¬»ØËÍ
+    case 2003: // ï¿½Í»ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½
         sendClientState(client_tcp);
 
         break;
-    case 2004: //Ô¶³Ì¹Ø»ú
+    case 2004: //Ô¶ï¿½Ì¹Ø»ï¿½
        {   
            TSHUTDOWNCMD shut_down_t;
            CutBothEndsSpace((char*)recvBuf);
@@ -397,7 +397,7 @@ void GetPackageFLAG(unsigned int dwFlag, bool &bError, bool &bCompress, bool &bC
 
 void SetHeadPackage(unsigned char * bHeadBuffer, char * cType, int iSender, int iRecver, int iLength, int iTrue_Length, bool bCompressed)
 {
-    bHeadBuffer[0] = 0x81; 						// ÉèÖÃÍ·°üÒýµ¼·û
+    bHeadBuffer[0] = 0x81; 						// ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     bHeadBuffer[1] = iSender;
     bHeadBuffer[2] = iRecver;
 
@@ -409,28 +409,28 @@ void SetHeadPackage(unsigned char * bHeadBuffer, char * cType, int iSender, int 
     unsigned int dwSendTime = time(NULL) * 1000;
 #endif
     dwSendTime = htonl(dwSendTime);
-    memcpy(bHeadBuffer + 3, &dwSendTime, 4); 	// ÉèÖÃÊ±¼ä´Á
+    memcpy(bHeadBuffer + 3, &dwSendTime, 4); 	// ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½
 
-    memcpy(bHeadBuffer + 7, cType, 6); 			// ÉèÖÃ×Ó°üÀàÐÍ 6Î»³¤¶È
+    memcpy(bHeadBuffer + 7, cType, 6); 			// ï¿½ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½ï¿½ 6Î»ï¿½ï¿½ï¿½ï¿½
 
     iLength = htonl(iLength);
-    memcpy(bHeadBuffer + 13, &iLength, 4); 		// ÉèÖÃ×Ó°ü³¤¶È
+    memcpy(bHeadBuffer + 13, &iLength, 4); 		// ï¿½ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½ï¿½
 
     iTrue_Length = htonl(iTrue_Length);
-    memcpy(bHeadBuffer + 17, &iTrue_Length, 4); // ÉèÖÃÕæÊµ³¤¶È£¬Ñ¹ËõÇ°³¤¶È
+    memcpy(bHeadBuffer + 17, &iTrue_Length, 4); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½È£ï¿½Ñ¹ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½
 
     unsigned int dwFlag = 0;
     if (bCompressed)
         dwFlag |= 0x04;
     dwFlag = htonl(dwFlag);
-    memcpy(bHeadBuffer + 21, &dwFlag, 4); 		// ÉèÖÃ±êÖ¾
+    memcpy(bHeadBuffer + 21, &dwFlag, 4); 		// ï¿½ï¿½ï¿½Ã±ï¿½Ö¾
 }
 
 void CreatPackage(char * cType, char *cSendBuf, int &iSendBufLen, unsigned char * bPackageData, int &iPackageLength)
 {
     bool bCompressed = false;
-    // ¸ù¾ÝÊÇ·ñÑ¹ËõÊôÐÔÅÐ¶ÏÊÇ·ñÐèÒª¶Ô·¢ËÍÊý¾Ý½øÐÐÑ¹Ëõ
-    unsigned long iDestLen = (iSendBufLen - 12) * 100.1 / 100.0 + 1; // Ñ¹ËõºóÄ¿±ê³¤¶È
+    // ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Ñ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½
+    unsigned long iDestLen = (iSendBufLen - 12) * 100.1 / 100.0 + 1; // Ñ¹ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ê³¤ï¿½ï¿½
    
     iDestLen = iSendBufLen;
   

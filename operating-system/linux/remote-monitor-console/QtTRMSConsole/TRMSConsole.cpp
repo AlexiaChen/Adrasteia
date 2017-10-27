@@ -3,7 +3,8 @@
 
 #ifdef __linux__
 #include <arpa/inet.h>
-#include "zlib.h"
+#include <unistd.h>
+//#include "zlib.h"
 #endif
 
 #include <cstdlib>
@@ -30,6 +31,12 @@
 
 static TCLIENT_INFO m_client_info;
 static bool m_isRecvEnd = false;
+
+typedef struct ContextInfo{
+    Client* tcp;
+    std::string ip;
+    std::string port;
+}ContextInfo;
 
 
 static void initClientInf(TCLIENT_INFO& info){
@@ -71,13 +78,13 @@ TRMSConsole::TRMSConsole(const std::string& ip, const std::string& port)
     m_ip = ip;
     m_port = port;
 
-    //std::cout << "connectting host is: " << ip << std::endl;
-   // std::cout << "connectting port is: " << port << std::endl;
+    std::cout << "connectting host is: " << ip << std::endl;
+    std::cout << "connectting port is: " << port << std::endl;
 
 
     m_client_tcp = new Client(std::atoi(port.c_str()), ip.c_str(), &m_isConnected);
  
-   // std::cout << "TRMSConsole leave" << std::endl;
+     std::cout << "TRMSConsole leave" << std::endl;
 }
 
 TRMSConsole::~TRMSConsole()
@@ -132,84 +139,86 @@ static std::string  stringTrim(const std::string & s)
 }
 
 
-void  TRMSConsole::login()
+ void  login(Client* tcp)
 {
    
-   // std::cout << "login() entry" << std::endl;
+     std::cout << "login() entry" << std::endl;
     
     TCLIENT_LOGIN tLogin;
     p_InitTab_Client_Login(&tLogin);
     strcpy(tLogin.IPAddress, Utils::localIP().c_str());
-    //std::cout << "local IP leave" << Utils::localIP().c_str() << std::endl;
+    std::cout << "local IP leave" << Utils::localIP().c_str() << std::endl;
     strcpy(tLogin.MAC, Utils::localMAC().c_str());
-    //std::cout << "local MAC leave" << Utils::localMAC().c_str() << std::endl;
+    std::cout << "local MAC leave" << Utils::localMAC().c_str() << std::endl;
     strncpy(tLogin.OSBootTime, Utils::lastStartupTime().c_str(),21);
-    //std::cout << "local OS Time leave" << stringTrim(Utils::lastStartupTime()).c_str() << std::endl;
+    std::cout << "local OS Time leave" << stringTrim(Utils::lastStartupTime()).c_str() << std::endl;
     
     strncpy(tLogin.BaseInfo, Utils::processesInf().c_str(), 4096);
-    //std::cout << "Base Info" << Utils::processesInf().c_str() << std::endl;
+    std::cout << "Base Info" << Utils::processesInf().c_str() << std::endl;
 
 
     char cSendBuf[CLIENT_LOGIN_LEN + 1];
     p_TabPack_Client_Login(cSendBuf, CLIENT_LOGIN_LEN + 1, &tLogin);
-    //std::cout << "p_TabPack_Client_Login Leave" << std::endl;
+    std::cout << "p_TabPack_Client_Login Leave" << std::endl;
     int iPackageLength = 0;
 
-    //std::cout << "Create Package Entry" << std::endl;
+    std::cout << "Create Package Entry" << std::endl;
 
     unsigned char  bPackageData[1024 * 10] = {0};
     
     int iSendBufLen = CLIENT_LOGIN_LEN + 1;
     CreatPackage("1001", cSendBuf, iSendBufLen, bPackageData, iPackageLength);
 
-    //std::cout << "Create Package Leave" << std::endl;
+    std::cout << "Create Package Leave" << std::endl;
   
-    SendData(m_client_tcp,bPackageData, iPackageLength);
+    SendData(tcp,bPackageData, iPackageLength);
     
-    //std::cout << "login() leave" << std::endl;
+    std::cout << "login() leave" << std::endl;
 
     return;
-}
-
-void TRMSConsole::iniRead(std::string& ip, std::string &port)
-{
-    std::ifstream infile("config.ini");
-    std::string line;
-    while (std::getline(infile, line))
-    {
-        std::istringstream iss(line);
-        std::string key, value;
-        if (!(iss >> key >> value)) { //std::cout << "ini read failed" << std::endl; 
-            break; } // error
-
-        if (key.compare("ip") == 0)
-        {
-            ip.assign(value);
-        }
-        if (key.compare("port") == 0)
-        {
-            port.assign(value);
-        }
-    }
 }
 
 
 
  void *recvThreadFunc(void* value_this)
 {
+    ContextInfo *info = (ContextInfo*)value_this;
+    Client * tcp = info->tcp;
     
-    Client * tcp = (Client*)value_this;
-
-    FILE *fp = NULL;
-    
+    std::cout << "entry recv thread fucn" << std::endl;
     while (true)
     {
         unsigned char recvBuffer[1024 * 10] = {0};
+       
         int recv_size = tcp->RecvBytes((char*)recvBuffer, 1024 * 10);
-        if (recv_size == -1) exit(-1);
+        if (recv_size == -1)
+        {
+            delete tcp;
+            tcp = NULL;
+            bool isConnected = false;
+            tcp =  new Client(std::atoi(info->port.c_str()), info->ip.c_str(), &isConnected);
+            if(isConnected)
+            {
+                login(tcp);
+            }
+            continue;
+          
+        }
+        if(recv_size == 0)
+        {
+            delete tcp;
+            tcp = NULL;
+            bool isConnected = false;
+            tcp =  new Client(std::atoi(info->port.c_str()), info->ip.c_str(), &isConnected);
+            if(isConnected)
+            {
+                login(tcp);
+            }
+            continue;
+        }
        
         
-        //²ð°ü
+        //ï¿½ï¿½ï¿½
         AnaData(recvBuffer, recv_size, &m_client_info, m_isRecvEnd);
         if (m_isRecvEnd)
         {
@@ -223,35 +232,43 @@ void TRMSConsole::iniRead(std::string& ip, std::string &port)
     
 }
 
+void *loginThreadFunc(void *value_this)
+{
+   ContextInfo *info = (ContextInfo*)value_this;
+   login(info->tcp);
+
+  return NULL;
+}
+
 void TRMSConsole::exec()
 {
-    while (!m_isConnected)
-    {
-        delete m_client_tcp;
-        m_client_tcp = NULL;
-        
-        std::string ip, port;
-        ip = m_ip;
-        port = m_port;
-
-       // std::cout << "re-connectting host is: " << ip << std::endl;
-        //std::cout << "re-connectting port is: " << port << std::endl;
-        m_client_tcp = new Client(std::atoi(port.c_str()), ip.c_str(), &m_isConnected);
-
-    }
-
+  ContextInfo info;
+  info.tcp = m_client_tcp;
+  info.ip = m_ip;
+  info.port = m_port;
+  
+#ifdef __linux__
+    pthread_t login_thread;
+    pthread_create(&login_thread,NULL,&loginThreadFunc,(void*)&info);
+    void *login_status;
+    pthread_join(login_thread,&login_status);
+#endif  
+   
 #ifdef __linux__
     pthread_t recv_thread;
-    pthread_create(&recv_thread, NULL, &recvThreadFunc, (void*)m_client_tcp);
+    pthread_create(&recv_thread, NULL, &recvThreadFunc, (void*)&info);
 #endif
    
     
-    login();
+      
+    
 #ifdef __linux__
     void *status;
     pthread_join(recv_thread, &status);
+  
 #endif
     
+
 }
 
 

@@ -6,7 +6,7 @@ deamon(){
  result=`pgrep qt-console`
  if [[ -z $result ]]; then
     echo "qt-console not exists"
-    nohup "/usr/local/bin/qt-console" "10.181.68.87" "9559" &
+    nohup "/usr/local/bin/qt-console" "192.168.1.106" "9559" &
  else
     echo "qt-console exists"
 	sleep 60
