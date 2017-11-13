@@ -1,0 +1,26 @@
+﻿生成启动时间为 10/23/2017 10:26:53 PM。
+     1>项目“C:\Users\MathxH\Desktop\jinghong-deploy\QtTRMSConsole\QtTRMSConsole.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         D:\MathxH\software\MicrosoftVisualStudio12.0\VC\bin\CL.exe /c /I. /I"D:\MathxH\3rd-party\Qt5.8.0\5.8\msvc2013\include" /I.\GeneratedFiles\Debug /I"D:\MathxH\3rd-party\Qt5.8.0\5.8\msvc2013\include\QtConcurrent" /I"D:\MathxH\3rd-party\Qt5.8.0\5.8\msvc2013\include\QtCore" /I"D:\MathxH\3rd-party\Qt5.8.0\5.8\msvc2013\include\QtNetwork" /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CONCURRENT_LIB /D QT_CORE_LIB /D QT_NETWORK_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GenTab.cpp main.cpp Public.cpp TCPSocket.cpp TRMSConsole.cpp Utils.cpp
+         GenTab.cpp
+     1>GenTab.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         main.cpp
+         Public.cpp
+         TCPSocket.cpp
+         TRMSConsole.cpp
+     1>TRMSConsole.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         Utils.cpp
+         正在生成代码...
+       Link:
+         D:\MathxH\software\MicrosoftVisualStudio12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\MathxH\Desktop\jinghong-deploy\QtTRMSConsole\Win32\Debug\\QtTRMSConsole.exe" /NOLOGO /LIBPATH:"D:\MathxH\3rd-party\Qt5.8.0\5.8\msvc2013\lib" qtmaind.lib Qt5Concurrentd.lib Qt5Cored.lib Qt5Networkd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\MathxH\Desktop\jinghong-deploy\QtTRMSConsole\Win32\Debug\QtTRMSConsole.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\MathxH\Desktop\jinghong-deploy\QtTRMSConsole\Win32\Debug\QtTRMSConsole.lib" /MACHINE:X86 /SAFESEH Debug\GenTab.obj
+         Debug\main.obj
+         Debug\Public.obj
+         Debug\TCPSocket.obj
+         Debug\TRMSConsole.obj
+         Debug\Utils.obj
+         QtTRMSConsole.vcxproj -> C:\Users\MathxH\Desktop\jinghong-deploy\QtTRMSConsole\Win32\Debug\QtTRMSConsole.exe
+     1>已完成生成项目“C:\Users\MathxH\Desktop\jinghong-deploy\QtTRMSConsole\QtTRMSConsole.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:07.70
