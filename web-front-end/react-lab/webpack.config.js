@@ -8,12 +8,13 @@ var APP_PATH = path.resolve(ROOT_PATH, 'app');
 
 module.exports= {
   entry: {
-    app: path.resolve(APP_PATH, 'app.jsx')
+    app: path.resolve(APP_PATH, 'app.jsx'),
+    appx: path.resolve(APP_PATH, 'appx.jsx')
   },
   
   output: {
     path: BUILD_PATH,
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
 
   //enable dev source map
@@ -50,7 +51,7 @@ module.exports= {
   },
   plugins: [
     new HtmlwebpackPlugin({
-      title: 'My first react app'
+      title: 'My first react app Hello'
     })
   ]
 }
