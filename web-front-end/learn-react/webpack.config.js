@@ -8,8 +8,7 @@ var APP_PATH = path.resolve(ROOT_PATH, 'app');
 
 module.exports= {
   entry: {
-    app: path.resolve(APP_PATH, 'app.jsx'),
-    appx: path.resolve(APP_PATH, 'appx.jsx')
+    app: path.resolve(APP_PATH, 'app.jsx')
   },
   
   output: {
