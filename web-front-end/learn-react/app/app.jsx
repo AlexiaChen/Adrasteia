@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Hello from './hello';
 import Profile from './Profile'
 import Counter from './Counter'
+import HobbyList from './HobbyList'
 
 const LynnProps = {
     name: 'Lynn Lee No.2',
@@ -21,6 +22,7 @@ class App extends React.Component{
                 <Profile name="Lynn Lee" age={16} />
                 <Profile {...LynnProps}/>
                 <Counter />
+                <HobbyList />
             </div>
         );
     }

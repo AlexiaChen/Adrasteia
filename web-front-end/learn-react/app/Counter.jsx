@@ -35,7 +35,7 @@ class Counter extends React.Component {
 
     //在重新render之前被调用，可以返回一个bool值来决定是否更新，默认返回true
     shouldComponentUpdate() {
-
+        return true;
     }
 
     //在重新render之前被调用，可以在渲染之前做一些准备工作，与componentWillMount类似
