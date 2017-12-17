@@ -15,7 +15,7 @@ function List(props){
     );
     
     return (
-        <div className="list-component col-md-4 list-group">
+        <div className="list-component list-group">
             {itemsContent}
         </div>
     );

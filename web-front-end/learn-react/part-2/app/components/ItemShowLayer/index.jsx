@@ -11,7 +11,7 @@ const propTypes = {
 };
 
 function ItemShowLayer(props){
-    if(!item || !item.id)
+    if(!props.item || !props.item.id)
     {
         return (
             <div className="col-md-8 item-show-layer-component">
