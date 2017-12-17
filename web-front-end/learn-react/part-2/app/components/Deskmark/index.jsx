@@ -51,23 +51,22 @@ class App extends React.Component {
     saveItem(item){
         let items = this.state.items;
         if(!item.id){
-           /* items = [...items, {
-                ...item,
-                id: uuid.v4(),
-                time: new Date().getTime()
-            }]*/
-
             items.push({
                 id: uuid.v4(),
-                time: new Date().getTime()
+                time: new Date().toISOString(),
+                title: item.title,
+                content: item.content
             });
         }else{
             items = items.map(
                 exist => {
                     if(exist.id === item.id)
                     {
-                        exist.title = item.title;
-                        exist.content
+                       return item;
+                    }
+                    else
+                    {
+                        return exist;
                     }
                 }
             );
@@ -113,8 +112,8 @@ class App extends React.Component {
     }
 
     render() {
-        const { items, selectId, editing } = this.state;
-        const selected = selectId && items.find( item => item.id === selectId);
+        const { items, selectedId, editing } = this.state;
+        const selected = selectedId && items.find( item => item.id === selectedId);
         const mainPart = editing ? 
             (
                 <ItemEditor 

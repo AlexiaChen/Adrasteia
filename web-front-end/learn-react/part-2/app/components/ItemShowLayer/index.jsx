@@ -26,8 +26,8 @@ function ItemShowLayer(props){
     return (
         <div className="col-md-8 item-show-layer-component">
             <div className="control-area">
-                <button onClick={() => onEdit(props.item.id)} className="btn btn-primary">Edit</button>
-                <button onClick={() => onDelete(props.item.id)} className="btn btn-danger">Delete</button>
+                <button onClick={() => props.onEdit(props.item.id)} className="btn btn-primary">Edit</button>
+                <button onClick={() => props.onDelete(props.item.id)} className="btn btn-danger">Delete</button>
             </div>
             <h2>{props.item.title}</h2>
             <div className="item-text">

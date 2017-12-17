@@ -12,6 +12,8 @@ function ListItem(props){
     let formatTime = 'unknown time';
     if(!props.item.time){
         formatTime = new Date().toISOString();
+    }else{
+        formatTime = props.item.time;
     }
     return (
         <a href="#" className="list-group-item item-component" onClick={props.onClick}> 

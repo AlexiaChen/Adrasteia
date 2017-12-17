@@ -6,7 +6,7 @@
   "scripts": {
     "test": "NODE_ENV=production mocha --compilers js:babel-core/register --require ignore-styles",
     "build": "webpack --config webpack.config.js --progress --display-modules --colors --display-reasons",
-    "dev": "webpack-dev-server --hot"
+    "dev": "webpack-dev-server --hot --inline"
 
   },
   "keywords": [
