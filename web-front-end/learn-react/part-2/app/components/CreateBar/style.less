@@ -1,0 +1,13 @@
+
+@specific-blue: #0275d8;
+@white-color: #ffffff;
+
+.list-component {
+    .create-bar-component {
+        background: @specific-blue;
+        color: @white-color;
+        &:hover {
+            background: darken(@specific-blue, 20%);
+        }
+    }
+}
