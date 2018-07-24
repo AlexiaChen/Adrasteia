@@ -41,13 +41,20 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.3</version>
+        </dependency>
+
 		<!-- CXF webservice -->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-spring-boot-starter-jaxws</artifactId>
 			<version>3.1.11</version>
 		</dependency>
-		<!-- CXF webservice -->
+        <!-- CXF webservice -->
+
 	</dependencies>
 
 	<build>
