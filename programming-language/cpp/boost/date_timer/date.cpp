@@ -59,5 +59,42 @@ int main()
     assert(m2.number_of_months() == 29);
     assert((year * 2).number_of_years() == 4); 
 
+
+    ///////////////日期运算/////////////////
+
+    boost::gregorian::date d6(2015,3,16), d7(2016,5,1);
+    std::cout << "day period: " << d7 - d6 << std::endl; // 相差几天
+
+    std::cout << "after 10 days and 2 months: " << d6 + boost::gregorian::months(2) + 
+        boost::gregorian::days(10) << std::endl;
+
+    /////////////日期区间///////////////////
+
+    boost::gregorian::date_period dp(d6,d7);
+    std::cout << "date period days: " << dp.length().days() << std::endl;
+    std::cout << "date period: " << dp << std::endl;
+
+    dp.shift(boost::gregorian::days(5));
+    std::cout << "shift 5 days date period: " << dp << std::endl;
+
+    boost::gregorian::date_period dp2(d6,boost::gregorian::days(500));
+
+    assert(dp.intersects(dp2));
+
+    /////////////日期迭代器//////////////
+
+    boost::gregorian::date d10(2018,2,5);
+
+    boost::gregorian::day_iterator dIter(d10);
+    boost::gregorian::year_iterator yIter(d10);
+    
+    assert(dIter == d10);
+    ++dIter;
+    assert(dIter == boost::gregorian::date(2018,2,6));
+
+    ++yIter;
+    assert(yIter == boost::gregorian::date(2019,2,5));
+
+
     return 0;
 }
