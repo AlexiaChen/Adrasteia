@@ -13,4 +13,4 @@ find_package(Boost 1.67.0 REQUIRED COMPONENTS
 
 
 add_subdirectory(timer)
-add_subdirectory(date_timer)
+add_subdirectory(date_time)
